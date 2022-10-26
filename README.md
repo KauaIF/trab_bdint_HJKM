@@ -74,93 +74,93 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-create table cliente(\n
-cpf varchar(20),
-nome varchar(80),
-telefone integer,
-primary key (cpf)
-);
+create table cliente(<br>
+cpf varchar(20),<br>
+nome varchar(80),<br>
+telefone integer,<br>
+primary key (cpf)<br>
+);<br>
 
-create table tipo_logradouro(
-codigo serial,
-nome varchar(50),
-primary key (codigo)
-);
+create table tipo_logradouro(<br>
+codigo serial,<br>
+nome varchar(50),<br>
+primary key (codigo)<br>
+);<br>
 
-create table bairro(
-codigo serial,
-nome varchar(50),
-primary key (codigo)
-);
+create table bairro(<br>
+codigo serial,<br>
+nome varchar(50),<br>
+primary key (codigo)<br>
+);<br>
 
-create table cidade(
-codigo serial,
-nome varchar(50),
-primary key (codigo)
-);
+create table cidade(<br>
+codigo serial,<br>
+nome varchar(50),<br>
+primary key (codigo)<br>
+);<br>
 
-create table endereco(
-codigo serial,
-nome_logradouro varchar(80),
-numero integer,
-fk_tipo_logradouro_codigo integer,
-fk_bairro_codigo integer,
-fk_cidade_codigo integer,
-foreign key (fk_tipo_logradouro_codigo) references tipo_logradouro(codigo),
-foreign key (fk_bairro_codigo) references bairro(codigo),
-foreign key (fk_cidade_codigo) references cidade(codigo)
-);
+create table endereco(<br>
+codigo serial,<br>
+nome_logradouro varchar(80),<br>
+numero integer,<br>
+fk_tipo_logradouro_codigo integer,<br>
+fk_bairro_codigo integer,<br>
+fk_cidade_codigo integer,<br>
+foreign key (fk_tipo_logradouro_codigo) references tipo_logradouro(codigo),<br>
+foreign key (fk_bairro_codigo) references bairro(codigo),<br>
+foreign key (fk_cidade_codigo) references cidade(codigo)<br>
+);<br>
 
-create table massa(
-codigo serial,
-tipo varchar(20),
-primary key codigo
-);
+create table massa(<br>
+codigo serial,<br>
+tipo varchar(20),<br>
+primary key codigo<br>
+);<br>
 
-create table borda(
-codigo serial,
-tipo varchar(20),
-primary key codigo
-);
+create table borda(<br>
+codigo serial,<br>
+tipo varchar(20),<br>
+primary key codigo<br>
+);<br>
 
-create table sabor(
-codigo serial,
-sabor varchar(20),
-primary key codigo
-);
+create table sabor(<br>
+codigo serial,<br>
+sabor varchar(20),<br>
+primary key codigo<br>
+);<br>
 
-create table pizza(
-codigo serial,
-sabor1 integer,
-sabor2 integer,
-sabor3 integer,
-sabor4 integer,
-fk_cod_massa integer,
-fk_cod_borda integer,
-primary key (codigo),
-foreign key (sabor1) references sabor(codigo),
-foreign key (sabor2) references sabor(codigo),
-foreign key (sabor3) references sabor(codigo),
-foreign key (sabor4) references sabor(codigo),
-foreign key (fk_cod_massa) references massa(codigo),
-foreign key (fk_cod_borda ) references borda(codigo)
-);
+create table pizza(<br>
+codigo serial,<br>
+sabor1 integer,<br>
+sabor2 integer,<br>
+sabor3 integer,<br>
+sabor4 integer,<br>
+fk_cod_massa integer,<br>
+fk_cod_borda integer,<br>
+primary key (codigo),<br>
+foreign key (sabor1) references sabor(codigo),<br>
+foreign key (sabor2) references sabor(codigo),<br>
+foreign key (sabor3) references sabor(codigo),<br>
+foreign key (sabor4) references sabor(codigo),<br>
+foreign key (fk_cod_massa) references massa(codigo),<br>
+foreign key (fk_cod_borda ) references borda(codigo)<br>
+);<br>
 
-create table forma_de_pagamento(
-codigo serial,
-tipo varchar(15),
-primary key(codigo)
-);
+create table forma_de_pagamento(<br>
+codigo serial,<br>
+tipo varchar(15),<br>
+primary key(codigo)<br>
+);<br>
 
-create table pedido (
-cod_pedido serial,
-cod_endereco integer,
-cod_pizza integer,
-cod_forma_de_pagamento integer,
-foreign key (cod_endereco) references endereco(codigo),
-foreign key (cod_pizza) references pizza(codigo),
-foreign key (cod_forma_de_pagamento) references forma_de_pagamento(codigo)
-);
+create table pedido (<br>
+cod_pedido serial,<br>
+cod_endereco integer,<br>
+cod_pizza integer,<br>
+cod_forma_de_pagamento integer,<br>
+foreign key (cod_endereco) references endereco(codigo),<br>
+foreign key (cod_pizza) references pizza(codigo),<br>
+foreign key (cod_forma_de_pagamento) references forma_de_pagamento(codigo)<br>
+);<br>
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
