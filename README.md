@@ -74,7 +74,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-create table cliente(
+create table cliente(\n
 cpf varchar(20),
 nome varchar(80),
 telefone integer,
