@@ -74,8 +74,93 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
+create table cliente(
+cpf varchar(20),
+nome varchar(80),
+telefone integer,
+primary key (cpf)
+);
+
+create table tipo_logradouro(
+codigo serial,
+nome varchar(50),
+primary key (codigo)
+);
+
+create table bairro(
+codigo serial,
+nome varchar(50),
+primary key (codigo)
+);
+
+create table cidade(
+codigo serial,
+nome varchar(50),
+primary key (codigo)
+);
+
+create table endereco(
+codigo serial,
+nome_logradouro varchar(80),
+numero integer,
+fk_tipo_logradouro_codigo integer,
+fk_bairro_codigo integer,
+fk_cidade_codigo integer,
+foreign key (fk_tipo_logradouro_codigo) references tipo_logradouro(codigo),
+foreign key (fk_bairro_codigo) references bairro(codigo),
+foreign key (fk_cidade_codigo) references cidade(codigo)
+);
+
+create table massa(
+codigo serial,
+tipo varchar(20),
+primary key codigo
+);
+
+create table borda(
+codigo serial,
+tipo varchar(20),
+primary key codigo
+);
+
+create table sabor(
+codigo serial,
+sabor varchar(20),
+primary key codigo
+);
+
+create table pizza(
+codigo serial,
+sabor1 integer,
+sabor2 integer,
+sabor3 integer,
+sabor4 integer,
+fk_cod_massa integer,
+fk_cod_borda integer,
+primary key (codigo),
+foreign key (sabor1) references sabor(codigo),
+foreign key (sabor2) references sabor(codigo),
+foreign key (sabor3) references sabor(codigo),
+foreign key (sabor4) references sabor(codigo),
+foreign key (fk_cod_massa) references massa(codigo),
+foreign key (fk_cod_borda ) references borda(codigo)
+);
+
+create table forma_de_pagamento(
+codigo serial,
+tipo varchar(15),
+primary key(codigo)
+);
+
+create table pedido (
+cod_pedido serial,
+cod_endereco integer,
+cod_pizza integer,
+cod_forma_de_pagamento integer,
+foreign key (cod_endereco) references endereco(codigo),
+foreign key (cod_pizza) references pizza(codigo),
+foreign key (cod_forma_de_pagamento) references forma_de_pagamento(codigo)
+);
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
