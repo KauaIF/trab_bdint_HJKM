@@ -40,7 +40,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
        3 Principais entidades: Pizza, Pedido, Cliente     
        Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas
     
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/ConceitualGrupo.PNG?raw=true "Modelo Conceitual")
 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
@@ -78,7 +78,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 
 ### 6	MODELO LÓGICO<br>
 
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Logico.PNG?raw=true "Modelo Logico")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/LogicoGrupo.PNG?raw=true "Modelo Logico")
 
 ### 7	MODELO FÍSICO<br>
 
@@ -195,7 +195,7 @@ foreign key (fk_pizza_cod) references pizza(cod)<br>
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Usar o colab para apresentar os resultados que devem incluir as instruções SQL + resultados em forma de tabela.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-    link do colab https://colab.research.google.com/drive/1ahiEcKLjSJNoKNdcpMLvs6KXmCYWF_Ws?usp=sharing
+link do [Colab] (https://colab.research.google.com/drive/1ahiEcKLjSJNoKNdcpMLvs6KXmCYWF_Ws?usp=sharing "Link para o Colab")
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
