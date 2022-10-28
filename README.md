@@ -41,7 +41,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 * Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
 
  ### 5.MODELO CONCEITUAL<br>
- ![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")
+    ![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")
     B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 5 e o Máximo 7.
         * informe quais são as 3 principais entidades do sistema em densenvolvimento
         (se houverem mais de 3 entidades, pense na importância da entidade para o sistema)
