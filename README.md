@@ -15,8 +15,7 @@ quarto_componente_do_grupo:email_segundo_componente@dominio.com<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
 <br>e motivação da escolha realizada. <br>
 
-> A empresa "Devcom Projetos" visa colaborar com desenvolvimento de projetos para uma sociedade melhor. Sabendo-se dos desafios para gerenciar projetos dentro de uma empresa e visando unir as informações relativas a funcionários, departamentos e projetos em um mesmo local, ficamos motivados com o desenvolvimento deste sistema. O Sistema "Devcom" tem como objetivo gerenciar todas as informações ao desenvolvimento das atividades de projetos em diversas localidades do país. Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
- 
+> A pizzaria “pasta dall'italia”, após anos de experiência e consolidada no mercado, decide disponibilizar a opção de delivery de pizzas personalizáveis. Após algumas semanas de frustração, o renomado restaurante se cansa de sua própria desorganização pela qual seus pedidos são submetidos. Determinado a elevar seu nível de profissionalismo e aprimorar a experiência do cliente, ele decide criar um sistema de banco de dados. Lá, serão armazenadas  informações sobre o cliente, do pedido (que o cliente), a forma de pagamento que será usada, o endereço e a pizza pedida. Como as pizzas são feitas pelos clientes, também serão armazenadas as massas, bordas e sabores disponíveis, sendo relacionadas às pizzas. 
 
 ### 3.MINI-MUNDO<br>
 
