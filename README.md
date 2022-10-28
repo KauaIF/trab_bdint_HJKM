@@ -19,7 +19,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 
 ### 3.MINI-MUNDO<br>
 
-> Para esse sistema delivery, será necessário armazenar informações do CLIENTE como: cpf, nome e telefone e do PEDIDO seu código, um cliente pode fazer nenhum ou vários pedidos, enquanto um pedido é feito apenas por um cliente. Os pedidos serão entregues a somente um endereço e pagos de apenas uma forma. Um endereço será adicionado no pedido, portanto terá pelo menos um pedido e no máximo n. Uma forma de pagamento pode ser atribuída a nenhum pedido ou vários. Essas informações também serão armazenadas. A FORMA DE PAGAMENTO terá um código e seu tipo. Do ENDEREÇO, armazenará seu código, tipo de logradouro, bairro, cidade, o nome do logradouro e o número.  Um pedido possuirá uma ou várias pizzas e esta será criada em um pedido, podendo ser repetida em futuros (um ou vários) pedidos. Uma PIZZA terá uma massa, borda, onde ambos terão um determinado tipo, e código. Por fim, a pizza precisará de um sabor ou vários, enquanto um SABOR pode ser usado por nenhuma pizza ou várias. O SABOR possuirá um código e tipo.
+> Para esse sistema delivery, será necessário armazenar informações do CLIENTE como: cpf, nome e telefone e do PEDIDO seu código, um cliente pode fazer nenhum ou vários pedidos, enquanto um pedido é feito apenas por um cliente. Os pedidos serão entregues a somente um endereço e pagos de apenas uma forma. Um endereço será adicionado no pedido, portanto terá pelo menos um pedido e no máximo n. Uma forma de pagamento pode ser atribuída a nenhum pedido ou vários. Essas informações também serão armazenadas. A FORMA DE PAGAMENTO terá um código e seu tipo. Do ENDEREÇO, armazenará seu código, tipo de logradouro, bairro, cidade, o nome do logradouro e o número.  Um pedido possuirá uma ou várias pizzas e esta será criada em um pedido, podendo ser repetida em futuros (um ou vários) pedidos. Uma PIZZA terá uma massa, borda, tamanho e preço onde ambos terão um determinado tipo, e código. Por fim, a pizza precisará de um sabor ou vários, enquanto um SABOR pode ser usado por nenhuma pizza ou várias. O SABOR possuirá um código e tipo.
 
 
 ### 4.PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
@@ -58,15 +58,18 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
     forma_de_pagamento: atributo composto que armazena o TIPO do pagamento que o cliente vai utilizar(este atributa ira gerar uma nova tabela)
     endereco: atributo composto que irá conter as informações referentes ao tipo de logradouro, cidade, bairro, nome do logradouro e o numero do endereço a qual o pedido foi realizado. (esse atributo também ira gerar alem de uma nova tabela, mais três tabelas)
     
-    PIZZA: Tabela que irá armazenar em um campo o codigo referente a pizza que irá para algum pedido
+    PIZZA: Tabela que irá armazenar em um campo o codigo referente a pizza que irá para algum pedido e terá 2 atributos multivalorados,
+        massa: tabela que irá armazenar o código e o tipo de massa que o cliente poderá escolher em sua pizza
+            cod: campo que armazena o código do tipo de cada massa
+            tipo: campo que armazena o tipo de cada massa (se é de fuba, comum, massa fina ou massa grossa, etc)
+        borda: tabela que irá armazenar o código e o tipo de borda que o cliente poderá escolher em sua pizza
+            cod: campo que armazena o código do tipo de cada borda
+            tipo: campo que armazena o tipo de cada borda (borda com recheiro de catupiry, de cheddar, sem recheio, etc)
     
-    MASSA: tabela que irá armazenar o código e o tipo de massa que o cliente poderá escolher em sua pizza
-    cod: campo que armazena o código do tipo de cada massa
-    tipo: campo que armazena o tipo de cada massa (se é de fuba, comum, massa fina ou massa grossa, etc)
-    
-    BORDA: tabela que irá armazenar o código e o tipo de borda que o cliente poderá escolher em sua pizza
-    cod: campo que armazena o código do tipo de cada borda
-    tipo: campo que armazena o tipo de cada borda (borda com recheiro de catupiry, de cheddar, sem recheio, etc)
+    DESCRIÇÃO: 
+        cod: campo que armazena o código referente ao tamanho e preço
+        tamanho: campo que contém uma palavra que define o tamanho da pizza
+        preço: campo que define o preço de um tamanho específico
     
     SABOR: tabela que irá armazenar o código e os sabores de pizza disponiveis para a escolha do cliente
     cod: campo que irá armazenar o código de cada tipo de sabor
