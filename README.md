@@ -28,12 +28,12 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
 > A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que mostre o nome de cada supervisor(a) e a quantidade de empregados supervisionados.
-* Relatório relativo aos os supervisores e supervisionados. O resultado deve conter o nome do supervisor e nome do supervisionado além da quantidade total de horas que cada supervisionado tem alocada aos projetos existentes na empresa.
-* Relatorio que mostre para cada linha obtida o nome do departamento, o valor individual de cada salario existente no  departamento e a média geral de salarios dentre todos os empregados. Os resultados devem ser apresentados ordenados por departamento.
-* Relatório que mostre as informações relacionadas a todos empregados de empresa (sem excluir ninguém). As linhas resultantes devem conter informações sobre: rg, nome, salario do empregado, data de início do salario atual, nomes dos projetos que participa, quantidade de horas e localização nos referidos projetos, numero e nome dos departamentos aos quais está alocado, informações do historico de salário como inicio, fim, e valores de salarios antigos que foram inclusos na referida tabela (caso possuam informações na mesma), além de todas informações relativas aos dependentes. 
+* Relatório que mostre todas as combinações possíveis de pizza, apresentando a massa, a borda e o sabor.
+* Relatório que mostre a quantidade de pedidos recebidos.
+* Relatório que pegue os pedidos e mostre, o nome do cliente, seu telefone, o tipo de pagamento,  o endereço (cidade, bairro, tipo e nome do logradouro, e número da residência) e a pizza (massa, borda e sabor).
+* Relatório que apresente os clientes (código e nome) e quantos pedidos ele já fez.
 >> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
-* Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
+* Relatório que mostre todas as formas de pagamento e mostrando qual é quantas vezes foi usada, mostrando da mais utilizada, pra menos utilizada. 
 
  ### 5.MODELO CONCEITUAL<br>
    
