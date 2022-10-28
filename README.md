@@ -45,7 +45,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)  Pizza, Pedido, Cliente     
     C) Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas<br>
           
-![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG.png?raw=true "Modelo Conceitual")
     
     
         
