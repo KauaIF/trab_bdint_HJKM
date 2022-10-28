@@ -8,7 +8,7 @@ Integrantes do grupo<br>
 primeiro_componente_do_grupo:kaua27123@gmail.com <br>
 Harian Adami Chagas Radaelli:harianadami@gmail.com <br>
 João Vitor Oliveira Scheidegger: joao.scheidegger@gmail.com<br>
-quarto_componente_do_grupo:email_segundo_componente@dominio.com<br>
+Mateus :ifrn.jucurutu@gmail.com<br>
 ...<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
