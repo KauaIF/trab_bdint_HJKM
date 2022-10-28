@@ -15,17 +15,11 @@ Mateus Santos Nascimento: ifrn.jucurutu@gmail.com<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
 <br>e motivação da escolha realizada. <br>
 
-> A pizzaria “pasta dall'italia”, após anos de experiência e consolidada no mercado, decide disponibilizar a opção de delivery de pizzas personalizáveis. Após algumas semanas de frustração, o renomado restaurante se cansa de sua própria desorganização pela qual seus pedidos são submetidos. Determinado a elevar seu nível de profissionalismo e aprimorar a experiência do cliente, ele decide criar um sistema de banco de dados. Lá, serão armazenadas  informações sobre o cliente, do pedido (que o cliente), a forma de pagamento que será usada, o endereço e a pizza pedida. Como as pizzas são feitas pelos clientes, também serão armazenadas as massas, bordas e sabores disponíveis, sendo relacionadas às pizzas. 
+> A pizzaria “Pasta dall'Italia”, após anos de experiência e consolidada no mercado, decide disponibilizar a opção de delivery de pizzas personalizáveis. Após algumas semanas de frustração, o renomado restaurante se cansa de sua própria desorganização pela qual seus pedidos são submetidos. Determinado a elevar seu nível de profissionalismo e aprimorar a experiência do cliente, ele decide criar um sistema de banco de dados. Lá, serão armazenadas  informações sobre o cliente, do pedido (que o cliente), a forma de pagamento que será usada, o endereço e a pizza pedida. Como as pizzas são feitas pelos clientes, também serão armazenadas as massas, bordas e sabores disponíveis, sendo relacionadas às pizzas. 
 
 ### 3.MINI-MUNDO<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Entrevista com o usuário e identificação dos requisitos.(quando for o caso de sistemas com cliente  real)<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
-> Para esse sistema delivery, será necessário armazenar informações do CLIENTE como: cpf, nome e telefone e do PEDIDO seu código, um cliente pode fazer nenhum ou vários pedidos, enquanto um pedido é feito apenas por um cliente. Os pedidos serão entregues a somente um endereço e pagos de apenas uma forma. Um endereço será adicionado no pedido, portanto terá pelo menos um pedido e no máximo n. Uma forma de pagamento pode ser atribuída a nenhum pedido ou vários. Essas informações também serão armazenadas. A FORMA DE PAGAMENTO terá um código e seu tipo. Do ENDEREÇO, armazenará seu código, tipo de logradouro e bairro.  Um pedido possuirá uma ou várias pizzas e esta será criada em um pedido, podendo ser repetida em futuros (um ou vários) pedidos. Uma PIZZA terá uma massa, borda, onde ambos terão um determinado tipo, e código. Por fim, a pizza precisará de um sabor ou vários, enquanto um SABOR pode ser usado por nenhuma pizza ou várias. O SABOR possuirá um código e tipo.
+> Para esse sistema delivery, será necessário armazenar informações do CLIENTE como: cpf, nome e telefone e do PEDIDO seu código, um cliente pode fazer nenhum ou vários pedidos, enquanto um pedido é feito apenas por um cliente. Os pedidos serão entregues a somente um endereço e pagos de apenas uma forma. Um endereço será adicionado no pedido, portanto terá pelo menos um pedido e no máximo n. Uma forma de pagamento pode ser atribuída a nenhum pedido ou vários. Essas informações também serão armazenadas. A FORMA DE PAGAMENTO terá um código e seu tipo. Do ENDEREÇO, armazenará seu código, tipo de logradouro, bairro, cidade, o nome do logradouro e o número.  Um pedido possuirá uma ou várias pizzas e esta será criada em um pedido, podendo ser repetida em futuros (um ou vários) pedidos. Uma PIZZA terá uma massa, borda, onde ambos terão um determinado tipo, e código. Por fim, a pizza precisará de um sabor ou vários, enquanto um SABOR pode ser usado por nenhuma pizza ou várias. O SABOR possuirá um código e tipo.
 
 
 ### 4.PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
@@ -42,16 +36,12 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 * Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
 
  ### 5.MODELO CONCEITUAL<br>
-    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 5 e o Máximo 7.
-        * informe quais são as 3 principais entidades do sistema em densenvolvimento
-        (se houverem mais de 3 entidades, pense na importância da entidade para o sistema)
-        Resposta: Pizza, Pedido, Cliente     
-    C) Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas<br>          
+   
+       3 Principais entidades: Pizza, Pedido, Cliente     
+       Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas<br>
+    
 ![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")
 
-    
-        
- 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
@@ -66,8 +56,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
     PEDIDO: Tabela que armazena as informações referentes ao pedido que o cliente faz
     codigo: atributo identificador da tabela pedido
     forma_de_pagamento: atributo composto que armazena o TIPO do pagamento que o cliente vai utilizar(este atributa ira gerar uma nova tabela)
-    endereco: atributo composto que irá conter as informações referentes ao tipo de logradouro, cidade, bairro, nome do logradouro e o numero
-        do endereço a qual o pedido foi realizado. (esse atributo também ira gerar alem de uma nova tabela, mais três tabelas)
+    endereco: atributo composto que irá conter as informações referentes ao tipo de logradouro, cidade, bairro, nome do logradouro e o numero do endereço a qual o pedido foi realizado. (esse atributo também ira gerar alem de uma nova tabela, mais três tabelas)
     
     PIZZA: Tabela que irá armazenar em um campo o codigo referente a pizza que irá para algum pedido
     
@@ -85,9 +74,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do esquema lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+
 ![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Logico.PNG?raw=true "Modelo Logico")
 
 ### 7	MODELO FÍSICO<br>
