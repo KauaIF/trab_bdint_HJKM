@@ -47,7 +47,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         (se houverem mais de 3 entidades, pense na importância da entidade para o sistema)
         Resposta: Pizza, Pedido, Cliente     
     C) Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas<br>          
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual28_10.PNG?raw=true "Modelo Conceitual")
 
     
         
