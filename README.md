@@ -132,21 +132,18 @@ create table massa(<br>
 cod serial,<br>
 tipo varchar(20),<br>
 primary key (cod),<br>
-preco float<br>
 );<br>
 
 create table borda(<br>
 cod serial,<br>
 tipo varchar(20),<br>
 primary key (cod),<br>
-preco float<br>
 );<br>
 
 create table sabor(<br>
 cod serial,<br>
 tipo varchar(20),<br>
 primary key (cod),<br>
-preco float<br>
 );<br>
 
 create table pizza(<br>
