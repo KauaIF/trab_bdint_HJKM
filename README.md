@@ -96,6 +96,13 @@ nome varchar(50),<br>
 primary key (cod)<br>
 );<br>
 
+create table descricao(<br>
+cod serial,<br>
+tamanho varchar(20),<br>
+preco integer,<br>
+primary key (cod)<br>
+);<br>
+
 create table bairro(<br>
 cod serial,<br>
 nome varchar(50),<br>
@@ -146,9 +153,11 @@ create table pizza(<br>
 cod serial,<br>
 fk_massa_cod integer,<br>
 fk_borda_cod integer,<br>
+fk_descricao_cod integer,<br>
 primary key (cod),<br>
 foreign key (fk_massa_cod) references massa(cod),<br>
 foreign key (fk_borda_cod ) references borda(cod)<br>
+foreign key (fk_descricao_cod ) references descricao(cod)<br>
 );<br>
 
 create table pizza_sabor(<br>
@@ -195,7 +204,7 @@ foreign key (fk_pizza_cod) references pizza(cod)<br>
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Usar o colab para apresentar os resultados que devem incluir as instruções SQL + resultados em forma de tabela.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-link do [Colab](https://colab.research.google.com/drive/1ahiEcKLjSJNoKNdcpMLvs6KXmCYWF_Ws?usp=sharing "Link para o Colab")
+Link do [Colab](https://colab.research.google.com/drive/1ahiEcKLjSJNoKNdcpMLvs6KXmCYWF_Ws?usp=sharing "Link para o Colab")
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
