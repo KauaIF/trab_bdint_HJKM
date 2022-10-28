@@ -25,8 +25,7 @@ Descrição textual das regras de negócio definidas como um  subconjunto do mun
 cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
 gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 
-> Para esse sistema delivery, será necessário armazenar informações do CLIENTE como: cpf, nome e telefone e do PEDIDO seu código,  cliente pode fazer nenhum ou vários pedidos, enquanto um pedido é feito apenas por um cliente. Os PEDIDOS serão entregues a somente um ENDEREÇO e pagos de apenas uma FORMA. Um ENDEREÇO será adicionado no PEDIDO, portanto terá pelo menos um PEDIDO e no máximo n. Uma FORMA DE PAGAMENTO pode ser atribuída a nenhum PEDIDO ou vários. Essas informações também serão armazenadas.  A FORMA DE PAGAMENTO terá um código e seu tipo. Do ENDEREÇO, armazenará seu código, tipo de logradouro e bairro.  Um PEDIDO possuirá uma ou várias PIZZAS e esta será criada em um pedido, podendo ser repetida em futuros (um ou vários) PEDIDOS. Uma PIZZA terá uma massa, borda, onde ambos terão um determinado tipo, e código. Por fim, a PIZZA precisará de um SABOR ou vários, enquanto um SABOR pode ser usado por nenhuma pizza ou várias. O SABOR possuirá um código e tipo.
- 
+> O sistema proposto para a "Devcom Projetos conterá as informacões aqui detalhadas. Dos Projetos serão armazenados o número, nome e cidade. Dos Departamentos serão armazenados o número e nome. O cliente destacou que cada projeto pode ter vários departamentos auxiliando no seu desenvolvimento, e cada departamento pode estar envolvido em vários projetos. Os dados relativos aos empregados que serão armazenados são: rg, nome, cpf, salário, data inicial do salario e supervisor de cada empregado. É importante destacar que cada empregado pode ser supervisionado por outro empregado, e obrigatoriamente deve estar alocado a um único departamento, mas pode gerenciar vários departamentos ou não gerenciar nenhum. Um empregado também pode participar de vários projetos, caso seja necessário, mas não precisa obrigatoriamente estar alocado em algum projeto. Com relação aos dependentes serão armazenadas as informações de nome do dependente, data de nascimento, sexo e grau de parentesco. Cada empregado pode ter vários dependentes, mas um dependente esta associado apenas a um único empregado. Com relação ao histórico de salário devemos armazenar as informações de valor do salário, data de início do salário no período e data final do salário no período. É importante lembrar que cada funcionario pode ter diversos eventos de histórico de salário associados a ele visto que este dado pode ser alterado várias vezes. 
 
 ### 4.PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
@@ -72,7 +71,6 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         (não serão aceitos modelos que não estejam em conformidade)
 ![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Logico.PNG?raw=true "Modelo Logico")
 
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")<br>
 ### 7	MODELO FÍSICO<br>
 
 
