@@ -189,6 +189,7 @@ foreign key (fk_pizza_cod) references pizza(cod)<br>
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Usar o colab para apresentar os resultados que devem incluir as instruções SQL + resultados em forma de tabela.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+    [Colab](https://github.com/discipbdint/public_samples/blob/main/BD_Exemplo_Relatorios_Empresa_VA.ipynb "Link do colab")
     link do colab https://colab.research.google.com/drive/1ahiEcKLjSJNoKNdcpMLvs6KXmCYWF_Ws?usp=sharing
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
