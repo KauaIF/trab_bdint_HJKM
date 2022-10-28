@@ -5,10 +5,10 @@ Trabalho desenvolvido durante a disciplina de Banco de dados
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Kauã Mateus de Barros Terra:kaua27123@gmail.com <br>
-Harian Adami Chagas Radaelli:harianadami@gmail.com <br>
+Kauã Mateus de Barros Terra: kaua27123@gmail.com <br>
+Harian Adami Chagas Radaelli: harianadami@gmail.com <br>
 João Vitor Oliveira Scheidegger: joao.scheidegger@gmail.com<br>
-Mateus :ifrn.jucurutu@gmail.com<br>
+Mateus Santos Nascimento: ifrn.jucurutu@gmail.com<br>
 ...<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
@@ -47,7 +47,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
         (se houverem mais de 3 entidades, pense na importância da entidade para o sistema)
         Resposta: Pizza, Pedido, Cliente     
     C) Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas<br>          
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual28_10.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/Conceitual.PNG?raw=true "Modelo Conceitual")
 
     
         
@@ -57,10 +57,8 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-      CLIENTE: Tabela que armazena as informações relativas ao cliente
+ 
+    CLIENTE: Tabela que armazena as informações relativas ao cliente
     cpf: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da pizzaria.
     nome: campo que armazena o nome de cada cliente da pizzaria
     telefone: campo que armazena o telefone de cada cliente da pizzaria
