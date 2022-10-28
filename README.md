@@ -60,10 +60,29 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
     [objeto]: [descrição do objeto]
     
     EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da pizzaria.<br>
-    Nome: campo que armazena o nome de cada cliente da pizzaria<br>
-    Telefone: campo que armazena o telefone de cada cliente da pizzaria<br>
+      CLIENTE: Tabela que armazena as informações relativas ao cliente
+    cpf: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da pizzaria.
+    nome: campo que armazena o nome de cada cliente da pizzaria
+    telefone: campo que armazena o telefone de cada cliente da pizzaria
+    
+    PEDIDO: Tabela que armazena as informações referentes ao pedido que o cliente faz
+    codigo: atributo identificador da tabela pedido
+    forma_de_pagamento: atributo composto que armazena o TIPO do pagamento que o cliente vai utilizar(este atributa ira gerar uma nova tabela)
+    endereco: atributo composto que irá conter as informações referentes ao tipo de logradouro, cidade, bairro, nome do logradouro e o numero do endereço a qual o pedido foi realizado. (esse atributo também ira gerar alem de uma nova tabela, mais três tabelas)
+    
+    PIZZA: Tabela que irá armazenar em um campo o codigo referente a pizza que irá para algum pedido
+    
+    MASSA: tabela que irá armazenar o código e o tipo de massa que o cliente poderá escolher em sua pizza
+    cod: campo que armazena o código do tipo de cada massa
+    tipo: campo que armazena o tipo de cada massa (se é de fuba, comum, massa fina ou massa grossa, etc)
+    
+    BORDA: tabela que irá armazenar o código e o tipo de borda que o cliente poderá escolher em sua pizza
+    cod: campo que armazena o código do tipo de cada borda
+    tipo: campo que armazena o tipo de cada borda (borda com recheiro de catupiry, de cheddar, sem recheio, etc)
+    
+    SABOR: tabela que irá armazenar o código e os sabores de pizza disponiveis para a escolha do cliente
+    cod: campo que irá armazenar o código de cada tipo de sabor
+    tipo: campo que irá armazenar os tipos de sabores disponiveis (frango, calabresa, portuguesa, etc)
 
 
 ### 6	MODELO LÓGICO<br>
