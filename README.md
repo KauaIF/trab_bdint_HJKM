@@ -55,8 +55,10 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
     
     PEDIDO: Tabela que armazena as informações referentes ao pedido que o cliente faz
     codigo: atributo identificador da tabela pedido
-    forma_de_pagamento: atributo composto que armazena o TIPO do pagamento que o cliente vai utilizar(este atributa ira gerar uma nova tabela)
-    endereco: atributo composto que irá conter as informações referentes ao tipo de logradouro, cidade, bairro, nome do logradouro e o numero do endereço a qual o pedido foi realizado. (esse atributo também ira gerar alem de uma nova tabela, mais três tabelas)
+    forma_de_pagamento: atributo composto que armazena o TIPO do pagamento que o cliente vai utilizar (este atributo ira gerar 
+    uma nova tabela)
+    endereco: atributo composto que irá conter as informações referentes ao tipo de logradouro, cidade, bairro, nome do logradouro e o 
+    numero do endereço a qual o pedido foi realizado. (esse atributo também ira gerar alem de uma nova tabela, mais três tabelas)
     
     PIZZA: Tabela que irá armazenar em um campo o codigo referente a pizza que irá para algum pedido e terá 2 atributos multivalorados,
         massa: tabela que irá armazenar o código e o tipo de massa que o cliente poderá escolher em sua pizza
