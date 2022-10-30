@@ -198,127 +198,127 @@ foreign key (fk_pizza_cod) references pizza(cod)<br>
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
- insert into TIPO_LOGRADOURO (nome) values
-('Rua'),
-('Avenida'),
-('Praça'),
-('Alameda'),
-('Condominio');
+ insert into TIPO_LOGRADOURO (nome) values<br>
+('Rua'),<br>
+('Avenida'),<br>
+('Praça'),<br>
+('Alameda'),<br>
+('Condominio');<br>
 
-insert into BAIRRO (nome) values
-('High Park'),
-('Canal Mirim'),
-('Canal Real'),
-('Conceição'),
-('Loyalts Martin'),
-('Joia Rara'),
-('São Domingos'),
-('Lirena Kobak');
+insert into BAIRRO (nome) values<br>
+('High Park'),<br>
+('Canal Mirim'),<br>
+('Canal Real'),<br>
+('Conceição'),<br>
+('Loyalts Martin'),<br>
+('Joia Rara'),<br>
+('São Domingos'),<br>
+('Lirena Kobak');<br>
 
-insert into CIDADE (nome) values 
-('Inipiquirigui'),
-('São Domingos'),
-('Garoa Damasco'),
-('Bom Carrasco'),
-('João Pessoa');
+insert into CIDADE (nome) values <br>
+('Inipiquirigui'),<br>
+('São Domingos'),<br>
+('Garoa Damasco'),<br>
+('Bom Carrasco'),<br>
+('João Pessoa');<br>
 
-insert into ENDERECO (fk_cidade_cod, fk_bairro_cod, fk_tipo_logradouro_codigo, numero, nome_logradouro) values
-(1, 1, 1, 1423, 'Areia Branca'),
-(1, 2, 2, 6445, 'Logradeu'),
-(2, 3, 2, 4823, 'Amal'),
-(3, 4, 3, 1684, 'Koisa Boa'),
-(4, 5, 3, 5342, 'Banda Norte'),
-(4, 6, 3, 7654, 'Campos Graciosos'),
-(5, 7, 4, 5465, 'Pitanumbas'),
-(5, 8, 5, 1658, 'Vale de Deus');
+insert into ENDERECO (fk_cidade_cod, fk_bairro_cod, fk_tipo_logradouro_codigo, numero, nome_logradouro) values<br>
+(1, 1, 1, 1423, 'Areia Branca'),<br>
+(1, 2, 2, 6445, 'Logradeu'),<br>
+(2, 3, 2, 4823, 'Amal'),<br>
+(3, 4, 3, 1684, 'Koisa Boa'),<br>
+(4, 5, 3, 5342, 'Banda Norte'),<br>
+(4, 6, 3, 7654, 'Campos Graciosos'),<br>
+(5, 7, 4, 5465, 'Pitanumbas'),<br>
+(5, 8, 5, 1658, 'Vale de Deus');<br>
 
-insert into CLIENTE (cpf, telefone, nome) values
-(48708345376 ,45980544821, 'Lorenzo Fogaça'),
-(43817225156 ,43974025174, 'Matheus Pinto'),
-(71011848201 ,46982745375, 'Leandro Castro'),
-(54613750652 ,44986875315, 'Marcelo da Costa'),
-(34386934618 ,43983951357, 'Agatha da Mota'),
-(62554061483 ,46982797175, 'Giovanna Barros'),
-(34161675461 ,44976818707, 'Enzo Viana'),
-(32487081317 ,42982087681, 'Matheus Nogueira');
+insert into CLIENTE (cpf, telefone, nome) values<br>
+(48708345376 ,45980544821, 'Lorenzo Fogaça'),<br>
+(43817225156 ,43974025174, 'Matheus Pinto'),<br>
+(71011848201 ,46982745375, 'Leandro Castro'),<br>
+(54613750652 ,44986875315, 'Marcelo da Costa'),<br>
+(34386934618 ,43983951357, 'Agatha da Mota'),<br>
+(62554061483 ,46982797175, 'Giovanna Barros'),<br>
+(34161675461 ,44976818707, 'Enzo Viana'),<br>
+(32487081317 ,42982087681, 'Matheus Nogueira');<br>
 
-insert into DESCRICAO (tamanho, preco) values
-('Grande', 40),
-('Medio', 30),
-('Pequeno', 20),
-('Medio', 30),
-('Medio', 30),
-('Grande', 40),
-('Grande', 40),
-('Pequeno', 20);
+insert into DESCRICAO (tamanho, preco) values<br>
+('Grande', 40),<br>
+('Medio', 30),<br>
+('Pequeno', 20),<br>
+('Medio', 30),<br>
+('Medio', 30),<br>
+('Grande', 40),<br>
+('Grande', 40),<br>
+('Pequeno', 20);<br>
 
-insert into MASSA (tipo) values
-('Massa de trigo'),
-('Massa sem glutén'),
-('Massa de arroz');
+insert into MASSA (tipo) values<br>
+('Massa de trigo'),<br>
+('Massa sem glutén'),<br>
+('Massa de arroz');<br>
 
-insert into BORDA (tipo) values
-('Normal'),
-('Recheada com catupiry'),
-('Recheada com chocolate');
+insert into BORDA (tipo) values<br>
+('Normal'),<br>
+('Recheada com catupiry'),<br>
+('Recheada com chocolate');<br>
 
-insert into SABOR (tipo) values
-('Portuguesa'),
-('Calabresa'),
-('Frango com Catupiry'),
-('Muçarela'),
-('Napolitana'),
-('Chocolate');
+insert into SABOR (tipo) values<br>
+('Portuguesa'),<br>
+('Calabresa'),<br>
+('Frango com Catupiry'),<br>
+('Muçarela'),<br>
+('Napolitana'),<br>
+('Chocolate');<br>
 
-insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_descricao_cod) values
-(1, 1, 1),
-(2, 2, 2),
-(3, 1, 3),
-(2, 3, 4),
-(2, 1, 5),
-(1, 2, 6),
-(2, 1, 7),
-(3, 3, 8);
+insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_descricao_cod) values<br>
+(1, 1, 1),<br>
+(2, 2, 2),<br>
+(3, 1, 3),<br>
+(2, 3, 4),<br>
+(2, 1, 5),<br>
+(1, 2, 6),<br>
+(2, 1, 7),<br>
+(3, 3, 8);<br>
 
-insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values
-(1, 3),
-(1, 6),
-(2, 5),
-(3, 4),
-(3, 5),
-(4, 7),
-(5, 2),
-(5, 3),
-(5, 6),
-(6, 3),
-(6, 5),
-(7, 3),
-(8, 7);
+insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values<br>
+(1, 3),<br>
+(1, 6),<br>
+(2, 5),<br>
+(3, 4),<br>
+(3, 5),<br>
+(4, 7),<br>
+(5, 2),<br>
+(5, 3),<br>
+(5, 6),<br>
+(6, 3),<br>
+(6, 5),<br>
+(7, 3),<br>
+(8, 7);<br>
 
-insert into FORMA_DE_PAGAMENTO (tipo) values
-('PIX'),
-('Cartao'),
-('Cedulas');
+insert into FORMA_DE_PAGAMENTO (tipo) values<br>
+('PIX'),<br>
+('Cartao'),<br>
+('Cedulas');<br>
 
-insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod) values
-(48708345376, 1, 1),
-(43817225156, 3, 2),
-(71011848201, 1, 3),
-(54613750652, 2, 4),
-(34386934618, 1, 5),
-(62554061483, 1, 6),
-(34161675461, 2, 7),
-(32487081317, 1, 8);
+insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod) values<br>
+(48708345376, 1, 1),<br>
+(43817225156, 3, 2),<br>
+(71011848201, 1, 3),<br>
+(54613750652, 2, 4),<br>
+(34386934618, 1, 5),<br>
+(62554061483, 1, 6),<br>
+(34161675461, 2, 7),<br>
+(32487081317, 1, 8);<br>
 
-insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod) values
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8);
+insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod) values<br>
+(1, 1),<br>
+(2, 2),<br>
+(3, 3),<br>
+(4, 4),<br>
+(5, 5),<br>
+(6, 6),<br>
+(7, 7),<br>
+(8, 8);<br>
 
 
 
