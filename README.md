@@ -27,7 +27,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
+> A pizzaria Pasta dall'Italia precisa inicialmente dos seguintes relatórios:
 * Relatório que mostre todas as combinações possíveis de pizza, apresentando a massa, a borda e o sabor.
 * Relatório que mostre a quantidade de pedidos recebidos.
 * Relatório que pegue os pedidos e mostre, o nome do cliente, seu telefone, o tipo de pagamento,  o endereço (cidade, bairro, tipo e nome do logradouro, e número da residência) e a pizza (massa, borda e sabor).
