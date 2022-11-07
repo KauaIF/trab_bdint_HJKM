@@ -80,7 +80,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 
 ### 6	MODELO LÓGICO<br>
 
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/LogicoGrupo.PNG?raw=true "Modelo Logico")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/image.png?raw=true "Modelo Logico")
 
 ### 7	MODELO FÍSICO<br>
 
