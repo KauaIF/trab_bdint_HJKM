@@ -85,8 +85,10 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 ### 7	MODELO FÍSICO<br>
 
 
+drop table if exists cliente, tipo_logradouro, precificacao, bairro, cidade, endereco, massa,  borda, sabor, pizza, pizza_sabor, forma_de_pagamento, pedido, pizza_pedido cascade;<br>
+
 create table cliente(<br>
-cpf varchar(20),<br>
+cpf varchar(30),<br>
 telefone bigInt,<br>
 nome varchar(80),<br>
 primary key (cpf)<br>
@@ -98,9 +100,9 @@ nome varchar(50),<br>
 primary key (cod)<br>
 );<br>
 
-create table descricao(<br>
+create table precificacao(<br>
 cod serial,<br>
-tamanho varchar(20),<br>
+tamanho varchar(30),<br>
 preco integer,<br>
 primary key (cod)<br>
 );<br>
@@ -132,31 +134,31 @@ foreign key (fk_cidade_cod) references cidade(cod)<br>
 
 create table massa(<br>
 cod serial,<br>
-tipo varchar(20),<br>
-primary key (cod),<br>
+tipo varchar(30),<br>
+primary key (cod)<br>
 );<br>
 
 create table borda(<br>
 cod serial,<br>
-tipo varchar(20),<br>
-primary key (cod),<br>
+tipo varchar(30),<br>
+primary key (cod)<br>
 );<br>
 
 create table sabor(<br>
 cod serial,<br>
-tipo varchar(20),<br>
-primary key (cod),<br>
+tipo varchar(30),<br>
+primary key (cod)<br>
 );<br>
 
 create table pizza(<br>
 cod serial,<br>
 fk_massa_cod integer,<br>
 fk_borda_cod integer,<br>
-fk_descricao_cod integer,<br>
+fk_precificacao_cod integer,<br>
 primary key (cod),<br>
 foreign key (fk_massa_cod) references massa(cod),<br>
-foreign key (fk_borda_cod ) references borda(cod)<br>
-foreign key (fk_descricao_cod ) references descricao(cod)<br>
+foreign key (fk_borda_cod) references borda(cod),<br>
+foreign key (fk_precificacao_cod) references precificacao(cod)<br>
 );<br>
 
 create table pizza_sabor(<br>
@@ -177,7 +179,7 @@ cod serial,<br>
 fk_endereco_cod integer,<br>
 fk_pizza_cod integer,<br>
 fk_forma_de_pagamento_cod integer,<br>
-fk_cliente_cpf varchar(20),<br>
+fk_cliente_cpf varchar(30),<br>
 primary key (cod),<br>
 foreign key (fk_endereco_cod) references endereco(cod),<br>
 foreign key (fk_pizza_cod) references pizza(cod),<br>
@@ -188,17 +190,14 @@ foreign key (fk_cliente_cpf) references cliente(cpf)<br>
 create table pizza_pedido(<br>
 fk_pedido_cod integer,<br>
 fk_pizza_cod integer,<br>
+qtd integer,<br>
 foreign key (fk_pedido_cod) references pedido(cod),<br>
 foreign key (fk_pizza_cod) references pizza(cod)<br>
 );<br>
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
- insert into TIPO_LOGRADOURO (nome) values<br>
+
+insert into TIPO_LOGRADOURO (nome) values<br>
 ('Rua'),<br>
 ('Avenida'),<br>
 ('Praça'),<br>
@@ -215,14 +214,14 @@ insert into BAIRRO (nome) values<br>
 ('São Domingos'),<br>
 ('Lirena Kobak');<br>
 
-insert into CIDADE (nome) values <br>
+insert into CIDADE (nome) values<br>
 ('Inipiquirigui'),<br>
 ('São Domingos'),<br>
 ('Garoa Damasco'),<br>
 ('Bom Carrasco'),<br>
 ('João Pessoa');<br>
 
-insert into ENDERECO (fk_cidade_cod, fk_bairro_cod, fk_tipo_logradouro_codigo, numero, nome_logradouro) values<br>
+insert into ENDERECO (fk_cidade_cod, fk_bairro_cod, fk_tipo_logradouro_cod, numero, nome_logradouro) values<br>
 (1, 1, 1, 1423, 'Areia Branca'),<br>
 (1, 2, 2, 6445, 'Logradeu'),<br>
 (2, 3, 2, 4823, 'Amal'),<br>
@@ -242,25 +241,23 @@ insert into CLIENTE (cpf, telefone, nome) values<br>
 (34161675461 ,44976818707, 'Enzo Viana'),<br>
 (32487081317 ,42982087681, 'Matheus Nogueira');<br>
 
-insert into DESCRICAO (tamanho, preco) values<br>
+insert into PRECIFICACAO (tamanho, preco) values<br>
+('Maracanã', 50),<br>
 ('Grande', 40),<br>
 ('Medio', 30),<br>
-('Pequeno', 20),<br>
-('Medio', 30),<br>
-('Medio', 30),<br>
-('Grande', 40),<br>
-('Grande', 40),<br>
 ('Pequeno', 20);<br>
 
 insert into MASSA (tipo) values<br>
 ('Massa de trigo'),<br>
 ('Massa sem glutén'),<br>
-('Massa de arroz');<br>
+('Massa de arroz'),<br>
+('Massa de fubá');<br>
 
 insert into BORDA (tipo) values<br>
 ('Normal'),<br>
 ('Recheada com catupiry'),<br>
-('Recheada com chocolate');<br>
+('Recheada com chocolate'),<br>
+('Recheada com cheddar');<br>
 
 insert into SABOR (tipo) values<br>
 ('Portuguesa'),<br>
@@ -268,17 +265,18 @@ insert into SABOR (tipo) values<br>
 ('Frango com Catupiry'),<br>
 ('Muçarela'),<br>
 ('Napolitana'),<br>
-('Chocolate');<br>
+('Chocolate'),<br>
+('Pepperoni');<br>
 
-insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_descricao_cod) values<br>
+insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_precificacao_cod) values<br>
 (1, 1, 1),<br>
 (2, 2, 2),<br>
 (3, 1, 3),<br>
 (2, 3, 4),<br>
-(2, 1, 5),<br>
-(1, 2, 6),<br>
-(2, 1, 7),<br>
-(3, 3, 8);<br>
+(2, 1, 3),<br>
+(1, 2, 3),<br>
+(2, 1, 1),<br>
+(3, 3, 4);<br>
 
 insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values<br>
 (1, 3),<br>
@@ -310,15 +308,15 @@ insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod) 
 (34161675461, 2, 7),<br>
 (32487081317, 1, 8);<br>
 
-insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod) values<br>
-(1, 1),<br>
-(2, 2),<br>
-(3, 3),<br>
-(4, 4),<br>
-(5, 5),<br>
-(6, 6),<br>
-(7, 7),<br>
-(8, 8);<br>
+insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
+(1, 1, 3),<br>
+(2, 2, 5),<br>
+(3, 3, 1),<br>
+(4, 4, 2),<br>
+(5, 5, 3),<br>
+(6, 6, 1),<br>
+(7, 7, 3),<br>
+(8, 8, 2);<br>
 
 
 
