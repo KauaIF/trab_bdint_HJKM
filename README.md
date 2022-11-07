@@ -298,15 +298,15 @@ insert into FORMA_DE_PAGAMENTO (tipo) values<br>
 ('Cartao'),<br>
 ('Cedulas');<br>
 
-insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod) values<br>
-(48708345376, 1, 1),<br>
-(43817225156, 3, 2),<br>
-(71011848201, 1, 3),<br>
-(54613750652, 2, 4),<br>
-(34386934618, 1, 5),<br>
-(62554061483, 1, 6),<br>
-(34161675461, 2, 7),<br>
-(32487081317, 1, 8);<br>
+insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod, data) values<br>
+(48708345376, 1, 1, '2022-03-09 12:42:00'),<br>
+(43817225156, 3, 2, '2022-11-07 14:12:00'),<br>
+(71011848201, 1, 3, '2022-09-01 09:09:00'),<br>
+(54613750652, 2, 4, '2021-12-20 10:31:00'),<br>
+(34386934618, 1, 5, '2021-12-22 21:08:00'),<br>
+(62554061483, 1, 6, '2022-01-30 22:55:00'),<br>
+(34161675461, 2, 7, '2022-11-05 16:07:00'),<br>
+(32487081317, 1, 8, '2022-10-09 12:42:00');<br>
 
 insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
 (1, 1, 3),<br>
