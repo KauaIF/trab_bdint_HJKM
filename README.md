@@ -88,7 +88,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 drop table if exists cliente, tipo_logradouro, precificacao, bairro, cidade, endereco, massa,  borda, sabor, pizza, pizza_sabor, forma_de_pagamento, pedido, pizza_pedido cascade;<br>
 
 create table cliente(<br>
-cpf varchar(30),<br>
+cpf varchar(40),<br>
 telefone bigInt,<br>
 nome varchar(80),<br>
 primary key (cpf)<br>
@@ -102,7 +102,7 @@ primary key (cod)<br>
 
 create table precificacao(<br>
 cod serial,<br>
-tamanho varchar(30),<br>
+tamanho varchar(40),<br>
 preco integer,<br>
 primary key (cod)<br>
 );<br>
@@ -134,19 +134,19 @@ foreign key (fk_cidade_cod) references cidade(cod)<br>
 
 create table massa(<br>
 cod serial,<br>
-tipo varchar(30),<br>
+tipo varchar(40),<br>
 primary key (cod)<br>
 );<br>
 
 create table borda(<br>
 cod serial,<br>
-tipo varchar(30),<br>
+tipo varchar(40),<br>
 primary key (cod)<br>
 );<br>
 
 create table sabor(<br>
 cod serial,<br>
-tipo varchar(30),<br>
+tipo varchar(40),<br>
 primary key (cod)<br>
 );<br>
 
@@ -179,7 +179,7 @@ cod serial,<br>
 fk_endereco_cod integer,<br>
 fk_pizza_cod integer,<br>
 fk_forma_de_pagamento_cod integer,<br>
-fk_cliente_cpf varchar(30),<br>
+fk_cliente_cpf varchar(40),<br>
 primary key (cod),<br>
 foreign key (fk_endereco_cod) references endereco(cod),<br>
 foreign key (fk_pizza_cod) references pizza(cod),<br>
