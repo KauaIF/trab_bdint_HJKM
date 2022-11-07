@@ -40,7 +40,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
        3 Principais entidades: Pizza, Pedido, Cliente     
        Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas
     
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/image.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/conceitual.png?raw=true "Modelo Conceitual")
 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
