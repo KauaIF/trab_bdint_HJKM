@@ -439,7 +439,87 @@ group by pedido.codigo; <br>
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+    
+select cliente.nome, pedido.cod as cod_pedido, sabor.tipo as "sabor(es)", cidade.nome as cidade, bairro.nome as bairro, tipo_logradouro.nome as tipo_logradouro, endereco.nome_logradouro, forma_de_pagamento.tipo as forma_pagamento, pizza_pedido.qtd, precificacao.tamanho, pizza_pedido.qtd * precificacao.preco as preco_total<br>
+from cliente inner join pedido on<br>
+(cliente.cpf=pedido.fk_cliente_cpf)<br>
+inner join pizza_pedido on<br>
+(pedido.cod=pizza_pedido.fk_pedido_cod)<br>
+inner join pizza on<br>
+(pizza.cod=pizza_pedido.fk_pizza_cod)<br>
+inner join massa on<br>
+(pizza.fk_massa_cod=massa.cod)<br>
+inner join precificacao on<br>
+(pizza.fk_precificacao_cod=precificacao.cod)<br>
+inner join borda on<br>
+(pizza.fk_borda_cod=borda.cod)<br>
+inner join pizza_sabor on<br>
+(pizza.cod=pizza_sabor.fk_pizza_cod)<br>
+inner join sabor on<br>
+(sabor.cod=pizza_sabor.fk_sabor_cod)<br>
+inner join endereco on<br>
+(pedido.fk_endereco_cod=endereco.cod)<br>
+inner join tipo_logradouro on<br>
+(tipo_logradouro.cod=endereco.fk_tipo_logradouro_cod)<br>
+inner join bairro on<br>
+(bairro.cod=endereco.fk_bairro_cod)<br>
+inner join cidade on<br>
+(cidade.cod=endereco.fk_cidade_cod)<br>
+inner join forma_de_pagamento on<br>
+(pedido.fk_forma_de_pagamento_cod=forma_de_pagamento.cod)<br>
+order by pedido.cod;<br>
 
+select cliente.nome, count(endereco.cod) as quantidade_de_enderecos_usados<br>
+from cliente inner join pedido on<br>
+(cliente.cpf=pedido.fk_cliente_cpf)<br>
+inner join endereco on<br>
+(pedido.fk_endereco_cod=endereco.cod)<br>
+group by(cliente.cpf);<br>
+
+select sabor.tipo, count(pedido.cod) as vezes_sabor_pedido<br>
+from cliente inner join pedido on<br>
+(cliente.cpf=pedido.fk_cliente_cpf)<br>
+inner join pizza_pedido on<br>
+(pedido.cod=pizza_pedido.fk_pedido_cod)<br>
+inner join pizza on<br>
+(pizza.cod=pizza_pedido.fk_pizza_cod)<br>
+inner join pizza_sabor on<br>
+(pizza_sabor.fk_pizza_cod=pizza.cod)<br>
+inner join sabor on<br>
+(pizza_sabor.fk_sabor_cod=sabor.cod)<br>
+group by (sabor.cod)<br>
+order by vezes_sabor_pedido desc;<br>
+
+select cidade.nome, count(pedido.cod) as qtd_de_pedidos_cidade<br>
+from pedido inner join endereco on<br>
+(pedido.fk_endereco_cod=endereco.cod)<br>
+inner join tipo_logradouro on<br>
+(tipo_logradouro.cod=endereco.fk_tipo_logradouro_cod)<br>
+inner join bairro on<br>
+(bairro.cod=endereco.fk_bairro_cod)<br>
+inner join cidade on<br>
+(cidade.cod=endereco.fk_cidade_cod)<br>
+group by (cidade.nome)<br>
+order by (qtd_de_pedidos_cidade);<br>
+
+select cliente.nome, count(pedido.cod) as qtd_pedidos_clientes<br>
+from cliente inner join pedido on<br>
+(cliente.cpf=pedido.fk_cliente_cpf)<br>
+group by (cliente.cpf)<br>
+order by (qtd_pedidos_clientes) desc;<br>
+
+select borda.tipo as borda, massa.tipo as massa, sabor.tipo as sabor, precificacao.tamanho<br>
+from pizza inner join massa on<br>
+(pizza.fk_massa_cod=massa.cod)<br>
+inner join precificacao on<br>
+(pizza.fk_precificacao_cod=precificacao.cod)<br>
+inner join borda on<br>
+(pizza.fk_borda_cod=borda.cod)<br>
+inner join pizza_sabor on<br>
+(pizza.cod=pizza_sabor.fk_pizza_cod)<br>
+inner join sabor on<br>
+(sabor.cod=pizza_sabor.fk_sabor_cod);<br>
+    
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
 select s.tipo, sum(pp.qtd) from sabor s<br>
