@@ -307,7 +307,8 @@ insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod, 
 (34386934618, 1, 5, '2021-12-22 21:08:00'),<br>
 (62554061483, 1, 6, '2022-01-30 22:55:00'),<br>
 (34161675461, 2, 7, '2022-11-05 16:07:00'),<br>
-(32487081317, 1, 8, '2022-10-09 12:42:00');<br>
+(32487081317, 1, 8, '2022-10-09 12:42:00'),<br>
+(48708345376, 1, 1, '2022-03-09 12:43:00');<br>
 
 insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
 (1, 1, 3),<br>
@@ -317,8 +318,8 @@ insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
 (5, 5, 3),<br>
 (6, 6, 1),<br>
 (7, 7, 3),<br>
-(8, 8, 2);<br>
-
+(8, 8, 2),<br>
+(9, 9, 2);<br>
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
