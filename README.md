@@ -447,6 +447,10 @@ group by pedido.codigo; <br>
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
+    Cliente que não fez nenhum pedido - Left
+    Endereço que não está relacionado a nenhum pedido - Right
+    Cliente, passando por pedido, relacionado ao endereço - Full Join
+    Nome da Pessoa e os sabores de pizza que ele pediu - Full Join
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
