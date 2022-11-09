@@ -330,6 +330,12 @@ Link do [Colab](https://colab.research.google.com/drive/1ahiEcKLjSJNoKNdcpMLvs6K
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+select * from pedido where data >'2022-05-01';<br>
+select nome from cliente where nome<>'Matheus Nogueira' and nome<>'Matheus Pinto';<br>
+select * from pizza_pedido where qtd>2;<br>
+select * from pizza where fk_precificacao_cod = 1;<br>
+select cod,nome_logradouro from endereco where cod <>4 and fk_cidade_cod <>7;<br>
+    
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
