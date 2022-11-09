@@ -444,6 +444,13 @@ group by pedido.codigo; <br>
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
+select tipo as "Sabor", sum(pp.qtd) as "Quantidade de pizzas pedidas" from sabor s <br>
+inner join pizza_sabor ps<br>
+on ps.fk_sabor_cod = s.cod<br>
+inner join pizza_pedido pp <br>
+on pp.fk_pizza_cod = ps.fk_pizza_cod<br>
+group by tipo;<br>
+
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
