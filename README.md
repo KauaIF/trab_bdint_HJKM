@@ -277,7 +277,8 @@ insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_precificacao_cod) values<br>
 (2, 1, 3),<br>
 (1, 2, 3),<br>
 (2, 1, 1),<br>
-(3, 3, 4);<br>
+(3, 3, 4),<br>
+(2, 1, 3);<br>
 
 insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values<br>
 (1, 3),<br>
