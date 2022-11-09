@@ -5,7 +5,7 @@ Trabalho desenvolvido durante a disciplina de Banco de dados
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Kauã Mateus de Barros Terra: kaua27123@gmail.com <br>
+Kauã Mateus de Barros Terra: kaua271203@gmail.com <br>
 Harian Adami Chagas Radaelli: harianadami@gmail.com <br>
 João Vitor Oliveira Scheidegger: joao.scheidegger@gmail.com<br>
 Mateus Santos Nascimento: ifrn.jucurutu@gmail.com<br>
