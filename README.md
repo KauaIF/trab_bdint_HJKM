@@ -177,13 +177,11 @@ primary key(cod)<br>
 create table pedido (<br>
 cod serial,<br>
 fk_endereco_cod integer,<br>
-fk_pizza_cod integer,<br>
 fk_forma_de_pagamento_cod integer,<br>
 fk_cliente_cpf varchar(40),<br>
 data timestamp,<br>
 primary key (cod),<br>
 foreign key (fk_endereco_cod) references endereco(cod),<br>
-foreign key (fk_pizza_cod) references pizza(cod),<br>
 foreign key (fk_forma_de_pagamento_cod) references forma_de_pagamento(cod),<br>
 foreign key (fk_cliente_cpf) references cliente(cpf)<br>
 );<br>
