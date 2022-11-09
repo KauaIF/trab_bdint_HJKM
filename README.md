@@ -40,7 +40,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
        3 Principais entidades: Pizza, Pedido, Cliente     
        Principais fluxos de informação/entidades do sistema: Os principais fluxos de informação/entidades estão entre Pizza, Pedido e Endereço pois são eles que possuem mais chaves estrangeiras que geram novas tabelas
     
-![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/ImgConceitual.PNG "Modelo Conceitual")
+![Alt text](https://github.com/KauaIF/trab_bdint_HJKM/blob/main/conceitual.png?raw=true "Modelo Conceitual")
 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
@@ -241,6 +241,9 @@ insert into CLIENTE (cpf, telefone, nome) values<br>
 (62554061483 ,46982797175, 'Giovanna Barros'),<br>
 (34161675461 ,44976818707, 'Enzo Viana'),<br>
 (32487081317 ,42982087681, 'Matheus Nogueira');<br>
+(49808345376 ,99980544821, 'Sergio Abreu'),<br>
+(50708345376 ,98080544821, 'Maurício Vieira'),<br>
+
 
 insert into PRECIFICACAO (tamanho, preco) values<br>
 ('Maracanã', 50),<br>
@@ -278,7 +281,8 @@ insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_precificacao_cod) values<br>
 (1, 2, 3),<br>
 (2, 1, 1),<br>
 (3, 3, 4),<br>
-(2, 1, 3);<br>
+(2, 1, 3),<br>
+(2, 2, 4);<br>
 
 insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values<br>
 (1, 3),<br>
@@ -293,7 +297,10 @@ insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values<br>
 (6, 3),<br>
 (6, 5),<br>
 (7, 3),<br>
-(8, 7);<br>
+(8, 7),<br>
+(9, 4),<br>
+(10, 2);<br>
+
 
 insert into FORMA_DE_PAGAMENTO (tipo) values<br>
 ('PIX'),<br>
@@ -309,7 +316,8 @@ insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod, 
 (62554061483, 1, 6, '2022-01-30 22:55:00'),<br>
 (34161675461, 2, 7, '2022-11-05 16:07:00'),<br>
 (32487081317, 1, 8, '2022-10-09 12:42:00'),<br>
-(48708345376, 1, 1, '2022-03-09 12:43:00');<br>
+(48708345376, 1, 1, '2022-07-09 12:55:00');<br>
+(34386934618, 1, 5, '2022-05-02 21:22:00'),<br>
 
 insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
 (1, 1, 3),<br>
@@ -320,7 +328,9 @@ insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
 (6, 6, 1),<br>
 (7, 7, 3),<br>
 (8, 8, 2),<br>
-(9, 9, 2);<br>
+(9, 9, 2),<br>
+(10, 9, 2),<br>
+(11, 10, 3);<br>
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
@@ -444,13 +454,6 @@ group by pedido.codigo; <br>
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
-select tipo as "Sabor", sum(pp.qtd) as "Quantidade de pizzas pedidas" from sabor s <br>
-inner join pizza_sabor ps<br>
-on ps.fk_sabor_cod = s.cod<br>
-inner join pizza_pedido pp <br>
-on pp.fk_pizza_cod = ps.fk_pizza_cod<br>
-group by tipo;<br>
-
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
