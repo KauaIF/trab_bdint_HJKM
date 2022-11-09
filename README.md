@@ -451,10 +451,23 @@ group by pedido.codigo; <br>
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-    b)
-    create view pedidos_recentes as
+b)
+create view pedidos_recentes as
 select * from pedido limit 100;
 
+create view cliente_pagou as
+select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd*preco) as valor_total_das_pizzas
+from CLIENTE inner join PEDIDO on
+(pedido.fk_cliente_cpf = cliente.cpf)
+inner join pizza_pedido on
+(pedido.cod=fk_pedido_cod)
+inner join pizza on
+(pizza_pedido.fk_pizza_cod=pizza.cod)
+inner join precificacao on
+(fk_precificacao_cod=precificacao.cod)
+group by CLIENTE.cpf;
+    
+    
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
