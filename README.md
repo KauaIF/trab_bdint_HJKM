@@ -340,7 +340,7 @@ select cod,nome_logradouro from endereco where cod <>4 and fk_cidade_cod <>7;<br
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
-    ######
+######
 select tamanho, preco, preco * 0.8 as promocao_20_porcento from precificacao<br>
 where preco<30 and not tamanho='pequeno';<br>
 
