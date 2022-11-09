@@ -341,13 +341,13 @@ select cod,nome_logradouro from endereco where cod <>4 and fk_cidade_cod <>7;<br
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
     ######
-select tamanho, preco, preco*0.8 as promocao_20_porcento from precificacao<br>
+select tamanho, preco, preco * 0.8 as promocao_20_porcento from precificacao<br>
 where preco<30 and not tamanho='pequeno';<br>
 
 select tamanho, preco, preco/5 as "preco_galera(5)" from precificacao<br>
 where preco/5 < 10 and not preco/5=4; <br>
 
-select qtd, preco as preco_individual, preco*qtd as preco_total <br>
+select qtd, preco as preco_individual, preco * qtd as preco_total <br>
 from pizza_pedido <br>
 inner join pizza on <br>
 (fk_pizza_cod=pizza.cod) <br>
@@ -355,18 +355,18 @@ inner join precificacao on <br>
 (precificacao.cod=fk_precificacao_cod)<br>
 order by(preco_total); <br>
 
-select qtd, preco*0.9 as preco_promocao_10_porcento, preco*0.9*qtd as preco_promocional_total <br>
+select qtd, preco * 0.9 as preco_promocao_10_porcento, preco * 0.9 * qtd as preco_promocional_total <br>
 from pizza_pedido <br>
 inner join pizza on <br>
 (fk_pizza_cod=pizza.cod) <br>
 inner join precificacao on <br>
 (precificacao.cod=fk_precificacao_cod)<br>
-where preco*0.9*qtd<100 or preco*0.9*qtd>140;<br>
+where preco * 0.9 * qtd<100 or preco * 0.9 * qtd>140;<br>
 
-select tamanho, preco*0.9 preco_promocao_10_porcento, preco/6 as "preco_geral(6)" from precificacao <br>
+select tamanho, preco * 0.9 preco_promocao_10_porcento, preco/6 as "preco_geral(6)" from precificacao <br>
 where preco>=30 and preco<40; <br>
 
-select qtd, preco as preco_individual, preco*qtd as preco_total, preco*qtd/5 as "preco_galera(5)" <br>
+select qtd, preco as preco_individual, preco * qtd as preco_total, preco * qtd/5 as "preco_galera(5)" <br>
 from pizza_pedido <br>
 inner join pizza on <br>
 (fk_pizza_cod=pizza.cod) <br>
@@ -374,7 +374,7 @@ inner join precificacao on <br>
 (precificacao.cod=fk_precificacao_cod)<br>
 order by(preco_total); <br>
 
-select cliente.nome, sum(preco*qtd)/count(cliente.cpf) as valor_medio_pedido <br>
+select cliente.nome, sum(preco * qtd)/count(cliente.cpf) as valor_medio_pedido <br>
 from cliente <br>
 inner join pedido on <br>
 (fk_cliente_cpf=cpf) <br>
@@ -386,7 +386,7 @@ inner join precificacao on <br>
 (fk_precificacao_cod=precificacao.cod)<br>
 group by cliente.cpf; <br>
 
-select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd*preco) as valor_total_das_pizzas <br>
+select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd * preco) as valor_total_das_pizzas <br>
 from CLIENTE inner join PEDIDO on <br>
 (pedido.fk_cliente_cpf = cliente.cpf) <br>
 inner join pizza_pedido on <br>
@@ -397,7 +397,7 @@ inner join precificacao on <br>
 (fk_precificacao_cod=precificacao.cod)<br>
 group by CLIENTE.cpf; <br>
 
-select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd*preco)/5 as "valor_total_das_pizzas_galera(5)" <br>
+select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd * preco)/5 as "valor_total_das_pizzas_galera(5)" <br>
 from CLIENTE inner join PEDIDO on <br>
 (fk_cliente_cpf = cliente.cpf) <br>
 inner join pizza_pedido on <br>
@@ -419,7 +419,7 @@ inner join precificacao on <br>
 (fk_precificacao_cod=precificacao.cod)<br>
 where pizza.fk_borda_cod=1 and pizza.fk_massa_cod=1; <br>
 
-select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd*0.8*preco)/5 as "valor_total_das_pizzas_promocao_20_galera(5)" <br>
+select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd * 0.8 * preco)/5 as "valor_total_das_pizzas_promocao_20_galera(5)" <br>
 from CLIENTE inner join PEDIDO on <br>
 (fk_cliente_cpf = cliente.cpf) <br>
 inner join pizza_pedido on <br>
