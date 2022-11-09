@@ -437,18 +437,17 @@ group by pedido.codigo; <br>
     b) Criar minimo 3 de atualização
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
+    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
+    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+
+#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+    a) Criar minimo 2 envolvendo algum tipo de junção
 select s.tipo, sum(pp.qtd) from sabor s<br>
 inner join pizza_sabor ps<br>
 on ps.fk_sabor_cod = s.cod<br>
 inner join on pizza_pedido pp<br>
 on pp.fk_pizza_cod = ps.fk_pizza_cod<br>
 group by s.tipo<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
-
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
-
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
     Cliente que não fez nenhum pedido - Left<br>
