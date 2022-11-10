@@ -562,6 +562,19 @@ select * from cliente<br>
 left outer join pedido on<br>
 pedido.fk_cliente_cpf = cliente.cpf;<br>
 
+create view media_cliente as <br>
+select cliente.nome, sum(preco * qtd)/count(cliente.cpf) as valor_medio_pedido<br>
+from cliente<br>
+inner join pedido on<br>
+(fk_cliente_cpf=cpf)<br>
+inner join pizza_pedido on<br>
+(pedido.cod=fk_pedido_cod)<br>
+inner join pizza on<br>
+(pizza_pedido.fk_pizza_cod=pizza.cod)<br>
+inner join precificacao on<br>
+(fk_precificacao_cod=precificacao.cod)<br>
+group by cliente.cpf;<br>
+    
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
