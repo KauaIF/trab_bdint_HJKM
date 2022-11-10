@@ -574,6 +574,18 @@ inner join pizza on<br>
 inner join precificacao on<br>
 (fk_precificacao_cod=precificacao.cod)<br>
 group by cliente.cpf;<br>
+
+create view pizza_compra as<br>
+select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd * preco) as valor_total_das_pizzas<br>
+from CLIENTE inner join PEDIDO on<br>
+(pedido.fk_cliente_cpf = cliente.cpf)<br>
+inner join pizza_pedido on<br>
+(pedido.cod=fk_pedido_cod)<br>
+inner join pizza on<br>
+(pizza_pedido.fk_pizza_cod=pizza.cod)<br>
+inner join precificacao on<br>
+(fk_precificacao_cod=precificacao.cod)<br>
+group by CLIENTE.cpf;<br>
     
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
