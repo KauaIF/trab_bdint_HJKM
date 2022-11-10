@@ -542,22 +542,26 @@ pedido.fk_cliente_cpf = cliente.cpf;<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 b)
-create view pedidos_recentes as
-select * from pedido limit 100;
+create view pedidos_recentes as<br>
+select * from pedido limit 100;<br>
 
-create view cliente_pagou as
-select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd*preco) as valor_total_das_pizzas
-from CLIENTE inner join PEDIDO on
-(pedido.fk_cliente_cpf = cliente.cpf)
-inner join pizza_pedido on
-(pedido.cod=fk_pedido_cod)
-inner join pizza on
-(pizza_pedido.fk_pizza_cod=pizza.cod)
-inner join precificacao on
-(fk_precificacao_cod=precificacao.cod)
-group by CLIENTE.cpf;
+create view cliente_pagou as<br>
+select nome, sum(qtd) as total_de_pizzas_compradas, sum(qtd*preco) as valor_total_das_pizzas<br>
+from CLIENTE inner join PEDIDO on<br>
+(pedido.fk_cliente_cpf = cliente.cpf)<br>
+inner join pizza_pedido on<br>
+(pedido.cod=fk_pedido_cod)<br>
+inner join pizza on<br>
+(pizza_pedido.fk_pizza_cod=pizza.cod)<br>
+inner join precificacao on<br>
+(fk_precificacao_cod=precificacao.cod)<br>
+group by CLIENTE.cpf;<br>
     
-    
+create view clientePedido as<br>
+select * from cliente<br>
+left outer join pedido on<br>
+pedido.fk_cliente_cpf = cliente.cpf;<br>
+
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
