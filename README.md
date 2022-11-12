@@ -546,7 +546,7 @@ inner join pizza_pedido pp<br>
 ON pp.fk_pedido_cod = p.cod<br>
 group by c.nome<br>
     
-select distinct cl.nome, sum(pe.preco*pp.qtd) as "Preço a Pagar" from cliente cl<br>
+select distinct cl.nome, sum(pe.preco*pp.qtd) as "Dinheiro ja pago a Pizzaria" from cliente cl<br>
 inner join pedido p<br>
 ON p.fk_cliente_cpf = cl.cpf<br>
 inner join pizza_pedido pp<br>
