@@ -539,7 +539,7 @@ inner join cidade c <br>
 on c.cod = e.fk_cidade_cod <br>
 group by tl.nome,e.nome_logradouro,e.numero ,b.nome,c.nome<br>
     
-select c.nome, sum(pp.qtd) from cliente c<br>
+select c.nome, sum(pp.qtd) as "Quantidade de Pizzas Pedidas" from cliente c<br>
 inner join pedido p<br>
 ON p.fk_cliente_cpf = c.cpf<br>
 inner join pizza_pedido pp<br>
