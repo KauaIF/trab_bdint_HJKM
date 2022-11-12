@@ -556,6 +556,17 @@ cliente.cpf = pedido.fk_cliente_cpf<br>
 full outer join endereco on<br>
 pedido.fk_endereco_cod = endereco.cod;<br>
     Nome da Pessoa e os sabores de pizza que ele pediu - Full Join<br>
+select cliente.nome, sabor.tipo from cliente<br>
+full outer join pedido on<br>
+pedido.fk_cliente_cpf = cliente.cpf<br>
+inner join pizza_pedido on<br>
+pizza_pedido.fk_pedido_cod = pedido.cod<br>
+inner join pizza on<br>
+pizza_pedido.fk_pizza_cod = pizza.cod<br>
+inner join pizza_sabor on<br>
+pizza_sabor.fk_pizza_cod = pizza.cod<br>
+full outer join sabor on<br>
+pizza_sabor.fk_sabor_cod = sabor.cod<br>
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
@@ -606,35 +617,35 @@ inner join precificacao on<br>
 (fk_precificacao_cod=precificacao.cod)<br>
 group by CLIENTE.cpf;<br>
 
-create view pedidos_detalhes as
-select cliente.nome, pedido.cod as cod_pedido, sabor.tipo as "sabor(es)", cidade.nome as cidade, bairro.nome as bairro, tipo_logradouro.nome as tipo_logradouro, endereco.nome_logradouro, forma_de_pagamento.tipo as forma_pagamento, pizza_pedido.qtd, precificacao.tamanho, pizza_pedido.qtd * precificacao.preco as preco_total
-from cliente inner join pedido on
-(cliente.cpf=pedido.fk_cliente_cpf)
-inner join pizza_pedido on
-(pedido.cod=pizza_pedido.fk_pedido_cod)
-inner join pizza on
-(pizza.cod=pizza_pedido.fk_pizza_cod)
-inner join massa on
-(pizza.fk_massa_cod=massa.cod)
-inner join precificacao on
-(pizza.fk_precificacao_cod=precificacao.cod)
-inner join borda on
-(pizza.fk_borda_cod=borda.cod)
-inner join pizza_sabor on
-(pizza.cod=pizza_sabor.fk_pizza_cod)
-inner join sabor on
-(sabor.cod=pizza_sabor.fk_sabor_cod)
-inner join endereco on
-(pedido.fk_endereco_cod=endereco.cod)
-inner join tipo_logradouro on
-(tipo_logradouro.cod=endereco.fk_tipo_logradouro_cod)
-inner join bairro on
-(bairro.cod=endereco.fk_bairro_cod)
-inner join cidade on
-(cidade.cod=endereco.fk_cidade_cod)
-inner join forma_de_pagamento on
-(pedido.fk_forma_de_pagamento_cod=forma_de_pagamento.cod)
-order by pedido.cod;
+create view pedidos_detalhes as<br>
+select cliente.nome, pedido.cod as cod_pedido, sabor.tipo as "sabor(es)", cidade.nome as cidade, bairro.nome as bairro, tipo_logradouro.nome as tipo_logradouro, endereco.nome_logradouro, forma_de_pagamento.tipo as forma_pagamento, pizza_pedido.qtd, precificacao.tamanho, pizza_pedido.qtd * precificacao.preco as preco_total<br>
+from cliente inner join pedido on<br>
+(cliente.cpf=pedido.fk_cliente_cpf)<br>
+inner join pizza_pedido on<br>
+(pedido.cod=pizza_pedido.fk_pedido_cod)<br>
+inner join pizza on<br>
+(pizza.cod=pizza_pedido.fk_pizza_cod)<br>
+inner join massa on<br>
+(pizza.fk_massa_cod=massa.cod)<br>
+inner join precificacao on<br>
+(pizza.fk_precificacao_cod=precificacao.cod)<br>
+inner join borda on<br>
+(pizza.fk_borda_cod=borda.cod)<br>
+inner join pizza_sabor on<br>
+(pizza.cod=pizza_sabor.fk_pizza_cod)<br>
+inner join sabor on<br>
+(sabor.cod=pizza_sabor.fk_sabor_cod)<br>
+inner join endereco on<br>
+(pedido.fk_endereco_cod=endereco.cod)<br>
+inner join tipo_logradouro on<br>
+(tipo_logradouro.cod=endereco.fk_tipo_logradouro_cod)<br>
+inner join bairro on<br>
+(bairro.cod=endereco.fk_bairro_cod)<br>
+inner join cidade on<br>
+(cidade.cod=endereco.fk_cidade_cod)<br>
+inner join forma_de_pagamento on<br>
+(pedido.fk_forma_de_pagamento_cod=forma_de_pagamento.cod)<br>
+order by pedido.cod;<br>
     
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
