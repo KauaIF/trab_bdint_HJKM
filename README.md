@@ -557,6 +557,13 @@ inner join precificacao pe<br>
 ON pe.cod = pz.fk_precificacao_cod<br>
 group by cl.nome<br>
     
+select fp.tipo as "Tipo de Pagamento", sum(pp.qtd) as "Pizza pedidas com essa forma de pagamento" from forma_de_pagamento fp<br>
+inner join pedido p<br>
+on p.fk_forma_de_pagamento_cod = fp.cod<br>
+inner join pizza_pedido pp<br>
+on pp.fk_pedido_cod = p.cod<br>
+group by fp.tipo<br>
+    
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
  Cliente que não fez nenhum pedido - Left<br>
