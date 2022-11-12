@@ -546,9 +546,9 @@ select * from cliente<br>
 left outer join pedido on<br>
 pedido.fk_cliente_cpf = cliente.cpf;<br>
     Endereço que não está relacionado a nenhum pedido - Right<br>
-    select * from pedido
-right outer join endereco on
-pedido.fk_endereco_cod = endereco.cod;
+    select * from pedido<br>
+right outer join endereco on<br>
+pedido.fk_endereco_cod = endereco.cod;<br>
     Cliente, passando por pedido, relacionado ao endereço - Full Join<br>
     Nome da Pessoa e os sabores de pizza que ele pediu - Full Join<br>
 
