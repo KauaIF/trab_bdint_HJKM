@@ -677,7 +677,7 @@ endereco.fk_cidade_cod = cidade.cod<br>
 where cidade.nome <> 'Inipiquirigui'<br>
 group by bairro.cod)<br>
 group by bairro.nome;<br>
-     b) Criar minimo 1 envolvendo algum tipo de junção
+     b) Criar minimo 1 envolvendo algum tipo de junção</br>
 select endereco.cod as codigo, endereco.numero as numero, cidade.nome as cidade, bairro.nome as bairro, tipo_logradouro.nome as "tipo logradouro", endereco.nome_logradouro as logradouro<br>
 from endereco<br>
 inner join cidade on<br>
