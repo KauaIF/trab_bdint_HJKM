@@ -620,6 +620,17 @@ order by pedido.cod;
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
+select endereco.cod as codigo, endereco.numero as numero, cidade.nome as cidade, bairro.nome as bairro, tipo_logradouro.nome as "tipo logradouro", endereco.nome_logradouro as logradouro<br>
+from endereco<br>
+inner join cidade on<br>
+endereco.fk_cidade_cod = cidade.cod<br>
+inner join bairro on<br>
+endereco.fk_bairro_cod = bairro.cod<br>
+inner join tipo_logradouro on<br>
+endereco.fk_tipo_logradouro_cod = tipo_logradouro.cod<br>
+where cidade.nome in (select nome <br>
+from cidade <br>
+where nome <> 'Bom Carrasco');<br>
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
