@@ -619,6 +619,27 @@ order by pedido.cod;
     
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
+select bairro.nome as bairro, sum(precificacao.preco) as preco<br>
+from pedido<br>
+inner join pizza_pedido on<br>
+pedido.cod = pizza_pedido.fk_pedido_cod<br>
+inner join pizza on<br>
+pizza_pedido.fk_pizza_cod = pizza.cod<br>
+inner join precificacao on<br>
+pizza.fk_precificacao_cod = precificacao.cod<br>
+inner join endereco on<br>
+pedido.fk_endereco_cod = endereco.cod<br>
+inner join bairro on<br>
+endereco.fk_bairro_cod = bairro.cod<br>
+where bairro.cod in (select bairro.cod<br>
+from endereco<br>
+inner join bairro on <br>
+endereco.fk_bairro_cod = bairro.cod<br>
+inner join cidade on<br>
+endereco.fk_cidade_cod = cidade.cod<br>
+where cidade.nome <> 'Inipiquirigui'<br>
+group by bairro.cod)<br>
+group by bairro.nome;<br>
      b) Criar minimo 1 envolvendo algum tipo de junção
 select endereco.cod as codigo, endereco.numero as numero, cidade.nome as cidade, bairro.nome as bairro, tipo_logradouro.nome as "tipo logradouro", endereco.nome_logradouro as logradouro<br>
 from endereco<br>
