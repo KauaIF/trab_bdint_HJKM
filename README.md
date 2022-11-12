@@ -528,6 +528,17 @@ on ps.fk_sabor_cod = s.cod<br>
 inner join on pizza_pedido pp<br>
 on pp.fk_pizza_cod = ps.fk_pizza_cod<br>
 group by s.tipo<br>
+    
+select tl.nome as "tipo de logradouro",e.nome_logradouro,e.numero,b.nome as "nome do bairro",c.nome as "nome da cidade" <br>
+from endereco e <br>
+inner join tipo_logradouro tl <br>
+ON tl.cod = e.fk_tipo_logradouro_cod<br>
+inner join bairro b <br>
+ON b.cod = e.fk_bairro_cod<br>
+inner join cidade c <br>
+on c.cod = e.fk_cidade_cod <br>
+group by tl.nome,e.nome_logradouro,e.numero ,b.nome,c.nome<br>
+    
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
     Cliente que não fez nenhum pedido - Left<br>
