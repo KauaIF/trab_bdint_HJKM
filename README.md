@@ -522,7 +522,7 @@ inner join sabor on<br>
     
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
-select s.tipo, sum(pp.qtd) from sabor s<br>
+select s.tipo as "Sabor", sum(pp.qtd) as "Quantidade de pizzas ja feitas" from sabor s<br>
 inner join pizza_sabor ps<br>
 on ps.fk_sabor_cod = s.cod<br>
 inner join pizza_pedido pp<br>
@@ -539,14 +539,14 @@ inner join cidade c <br>
 on c.cod = e.fk_cidade_cod <br>
 group by tl.nome,e.nome_logradouro,e.numero ,b.nome,c.nome<br>
     
-select c.nome, sum(pp.qtd) as "Quantidade de Pizzas Pedidas" from cliente c<br>
+select c.nome as "Nome do Cliente", sum(pp.qtd) as "Quantidade de Pizzas Pedidas" from cliente c<br>
 inner join pedido p<br>
 ON p.fk_cliente_cpf = c.cpf<br>
 inner join pizza_pedido pp<br>
 ON pp.fk_pedido_cod = p.cod<br>
 group by c.nome<br>
     
-select cl.nome, sum(pe.preco*pp.qtd) as "Dinheiro ja pago a Pizzaria" from cliente cl<br>
+select cl.nome as "Nome do Cliente", sum(pe.preco*pp.qtd) as "Dinheiro ja pago a Pizzaria" from cliente cl<br>
 inner join pedido p<br>
 ON p.fk_cliente_cpf = cl.cpf<br>
 inner join pizza_pedido pp<br>
@@ -563,6 +563,16 @@ on p.fk_forma_de_pagamento_cod = fp.cod<br>
 inner join pizza_pedido pp<br>
 on pp.fk_pedido_cod = p.cod<br>
 group by fp.tipo<br>
+
+select b.tipo as "Tipo de Borda", sum(pp.qtd) as "Quantidade de pizzas ja feitas" from borda b<br>
+inner join pizza p<br>
+on p.fk_borda_cod = b.cod<br>
+inner join pizza_pedido pp<br>
+on pp.fk_pizza_cod = p.cod<br>
+group by b.tipo<br>
+
+
+
     
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
