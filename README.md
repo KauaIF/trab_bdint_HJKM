@@ -539,6 +539,13 @@ inner join cidade c <br>
 on c.cod = e.fk_cidade_cod <br>
 group by tl.nome,e.nome_logradouro,e.numero ,b.nome,c.nome<br>
     
+select c.nome, sum(pp.qtd) from cliente c<br>
+inner join pedido p<br>
+ON p.fk_cliente_cpf = c.cpf<br>
+inner join pizza_pedido pp<br>
+ON pp.fk_pedido_cod = p.cod<br>
+group by c.nome<br>
+    
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
  Cliente que não fez nenhum pedido - Left<br>
