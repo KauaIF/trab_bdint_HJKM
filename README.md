@@ -525,7 +525,7 @@ inner join sabor on<br>
 select s.tipo, sum(pp.qtd) from sabor s<br>
 inner join pizza_sabor ps<br>
 on ps.fk_sabor_cod = s.cod<br>
-inner join on pizza_pedido pp<br>
+inner join pizza_pedido pp<br>
 on pp.fk_pizza_cod = ps.fk_pizza_cod<br>
 group by s.tipo<br>
     
