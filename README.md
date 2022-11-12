@@ -546,6 +546,17 @@ inner join pizza_pedido pp<br>
 ON pp.fk_pedido_cod = p.cod<br>
 group by c.nome<br>
     
+select cl.nome, (pe.preco*(sum(pp.qtd))) as "Preço a Pagar" from cliente cl<br>
+inner join pedido p<br>
+ON p.fk_cliente_cpf = cl.cpf<br>
+inner join pizza_pedido pp<br>
+ON pp.fk_pedido_cod = p.cod<br>
+inner join pizza pz<br>
+on pz.cod = pp.fk_pizza_cod<br>
+inner join precificacao pe<br>
+ON pe.cod = pz.fk_precificacao_cod<br>
+group by cl.nome,pe.preco<br>
+    
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
  Cliente que não fez nenhum pedido - Left<br>
