@@ -571,9 +571,13 @@ inner join pizza_pedido pp<br>
 on pp.fk_pizza_cod = p.cod<br>
 group by b.tipo<br>
 
-
-
-    
+select m.tipo as "Tipo de Massa", sum(pp.qtd) as "Quantidade de pizzas ja feitas" from massa m<br>
+inner join pizza p<br>
+on p.fk_massa_cod = m.cod<br>
+inner join pizza_pedido pp<br>
+on pp.fk_pizza_cod = p.cod<br>
+group by m.tipo<br>
+  
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
  Cliente que não fez nenhum pedido - Left<br>
