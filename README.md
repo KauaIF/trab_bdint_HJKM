@@ -238,18 +238,18 @@ insert into CLIENTE (cpf, telefone, nome) values<br>
 (34386934618 ,43983951357, 'Agatha da Mota'),<br>
 (62554061483 ,46982797175, 'Giovanna Barros'),<br>
 (34161675461 ,44976818707, 'Enzo Viana'),<br>
-(32487081317 ,42982087681, 'Matheus Nogueira');<br>
-(42649378093 ,11798689187, 'Rafael Solimões');<br>
-(76729680091 ,68131964310, 'Davi Pereira');<br>
-(60710341083 ,92801704455, 'Caio Barreto');<br>
-(68291051020 ,92621564853, 'Paulo Silva');<br>
-(59032741020 ,92836387029, 'Ademar Pinto');<br>
-(24208256087 ,92834923378, 'Diego Garcia');<br>
-(20684737043 ,71479637094, 'Luís Fonseca');<br>
-(58349103000 ,71501075605, 'Gabriel Oliveira');<br>
-(14360748000 ,71334757199, 'Gustavo Flores');<br>
-(43878133006 ,27340472131, 'Ricardo Nunes');<br>
-(85863630060 ,27772234482, 'Roberto Alves');<br>
+(32487081317 ,42982087681, 'Matheus Nogueira'),<br>
+(42649378093 ,11798689187, 'Rafael Solimões'),<br>
+(76729680091 ,68131964310, 'Davi Pereira'),<br>
+(60710341083 ,92801704455, 'Caio Barreto'),<br>
+(68291051020 ,92621564853, 'Paulo Silva'),<br>
+(59032741020 ,92836387029, 'Ademar Pinto'),<br>
+(24208256087 ,92834923378, 'Diego Garcia'),<br>
+(20684737043 ,71479637094, 'Luís Fonseca'),<br>
+(58349103000 ,71501075605, 'Gabriel Oliveira'),<br>
+(14360748000 ,71334757199, 'Gustavo Flores'),<br>
+(43878133006 ,27340472131, 'Ricardo Nunes'),<br>
+(85863630060 ,27772234482, 'Roberto Alves'),<br>
 (34870064057 ,27175100067, 'Jaime Leite');<br>
 
 
