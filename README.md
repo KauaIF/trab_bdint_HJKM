@@ -278,7 +278,20 @@ insert into SABOR (tipo) values<br>
 ('Muçarela'),<br>
 ('Napolitana'),<br>
 ('Chocolate'),<br>
-('Pepperoni');<br>
+('Pepperoni'),<br>
+('Marguerita'),<br>
+('Quatro queijos'),<br>
+('Escarola'),<br>
+('Atum'),<br>
+('Romana'),<br>
+('Brócolis'),<br>
+('Lombinho'),<br>
+('Palmito'),<br>
+('Camarão'),<br>
+('Toscana'),<br>
+('Mineira'),<br>
+('Brasileira'),<br>
+('Bauru');<br>
 
 insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_precificacao_cod) values<br>
 (1, 1, 1),<br>
