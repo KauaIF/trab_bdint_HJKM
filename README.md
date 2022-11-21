@@ -31,7 +31,7 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 * Relatório que mostre todas as combinações possíveis de pizza, apresentando a massa, a borda e o sabor.
 * Relatório que mostre a quantidade de pedidos recebidos.
 * Relatório que pegue os pedidos e mostre, o nome do cliente, seu telefone, o tipo de pagamento,  o endereço (cidade, bairro, tipo e nome do logradouro, e número da residência) e a pizza (massa, borda e sabor).
-* Relatório que apresente os clientes (código e nome) e quantos pedidos ele já fez.
+* Relatório que apresente os clientes (código e nome) e quantos pedidos eles já fizeram.
 >> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
 * Relatório que mostre todas as formas de pagamento e mostrando qual é quantas vezes foi usada, mostrando da mais utilizada, pra menos utilizada. 
 
@@ -295,14 +295,27 @@ insert into SABOR (tipo) values<br>
 
 insert into PIZZA (fk_massa_cod, fk_borda_cod, fk_precificacao_cod) values<br>
 (1, 1, 1),<br>
-(2, 2, 2),<br>
-(3, 1, 3),<br>
-(2, 3, 4),<br>
-(2, 1, 3),<br>
+(1, 1, 2),<br>
+(1, 2, 1),<br>
+(1, 2, 2),<br>
 (1, 2, 3),<br>
+(1, 2, 4),<br>
+(1, 3, 1),<br>
+(1, 1, 3),<br>
+(1, 2, 2),<br>
+(1, 3, 2),<br>
+(1, 3, 3),<br>
+(1, 4, 4),<br>
 (2, 1, 1),<br>
+(2, 1, 2),<br>
+(2, 2, 2),<br>
+(2, 1, 3),<br>
+(2, 2, 2),<br>
+(2, 3, 4),<br>
+(2, 4, 4),<br>
+(3, 1, 3),<br>
 (3, 3, 4),<br>
-(2, 1, 3);<br>
+(4, 1, 1);<br>
 
 insert into PIZZA_SABOR (fk_pizza_cod, fk_sabor_cod) values<br>
 (1, 3),<br>
