@@ -211,14 +211,25 @@ insert into BAIRRO (nome) values<br>
 ('Loyalts Martin'),<br>
 ('Joia Rara'),<br>
 ('São Domingos'),<br>
-('Lirena Kobak');<br>
+('Lirena Kobak'),<br>
+('Boa Vista'),<br>
+('Planalto'),<br>
+('São Francisco'),<br>
+('Industrial'),<br>
+('São Cristóvão'),<br>
+('Bela Vista'),<br>
+('Santo Antônio');<br>
 
 insert into CIDADE (nome) values<br>
 ('Inipiquirigui'),<br>
 ('São Domingos'),<br>
 ('Garoa Damasco'),<br>
 ('Bom Carrasco'),<br>
-('João Pessoa');<br>
+('João Pessoa'),<br>
+('São Paulo'),<br>
+('Curitiba'),<br>
+('Nova Cruz'),<br>
+('Vila Pavão');<br>
 
 insert into ENDERECO (fk_cidade_cod, fk_bairro_cod, fk_tipo_logradouro_cod, numero, nome_logradouro) values<br>
 (1, 1, 1, 1423, 'Areia Branca'),<br>
@@ -228,7 +239,15 @@ insert into ENDERECO (fk_cidade_cod, fk_bairro_cod, fk_tipo_logradouro_cod, nume
 (4, 5, 3, 5342, 'Banda Norte'),<br>
 (4, 6, 3, 7654, 'Campos Graciosos'),<br>
 (5, 7, 4, 5465, 'Pitanumbas'),<br>
-(5, 8, 5, 1658, 'Vale de Deus');<br>
+(5, 8, 5, 1658, 'Vale de Deus'),<br>
+(5, 9,  3, 0923, 'Barcos Arteicos'),<br>
+(6, 10, 1, 9854, 'Mata Éguas'),<br>
+(6, 11, 2, 0923, 'Japanepera'),<br>
+(7, 12, 1, 7657, 'Piriguinabá'),<br>
+(8, 13, 5, 1232, 'Campo Sereno'),<br>
+(9, 14, 3, 9845, 'Luiz Gonçalves'),<br>
+(9, 15, 2, 9764, 'Inpêndencia');<br>
+
 
 insert into CLIENTE (cpf, telefone, nome) values<br>
 (48708345376 ,45980544821, 'Lorenzo Fogaça'),<br>
