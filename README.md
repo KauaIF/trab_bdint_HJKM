@@ -639,22 +639,20 @@ group by m.tipo<br>
   
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
- Cliente que não fez nenhum pedido - Left<br>
-select cod, from cliente<br>
-left outer join pedido on<br>
-pedido.fk_cliente_cpf = cliente.cpf;<br>
+select pedido.cod, cliente.nome  from cliente
+left outer join pedido on
+pedido.fk_cliente_cpf = cliente.cpf;
 
-    Endereço que não está relacionado a nenhum pedido - Right<br>
 select * from pedido<br>
 right outer join endereco on<br>
 pedido.fk_endereco_cod = endereco.cod;<br>
-    Cliente, passando por pedido, relacionado ao endereço - Full Join<br>
+
 select * from cliente<br>
 full outer join pedido on<br>
 cliente.cpf = pedido.fk_cliente_cpf<br>
 full outer join endereco on<br>
 pedido.fk_endereco_cod = endereco.cod;<br>
-    Nome da Pessoa e os sabores de pizza que ele pediu - Full Join<br>
+
 select cliente.nome, sabor.tipo from cliente<br>
 full outer join pedido on<br>
 pedido.fk_cliente_cpf = cliente.cpf<br>
