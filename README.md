@@ -640,9 +640,10 @@ group by m.tipo<br>
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
  Cliente que não fez nenhum pedido - Left<br>
-select * from cliente<br>
+select cod, from cliente<br>
 left outer join pedido on<br>
 pedido.fk_cliente_cpf = cliente.cpf;<br>
+
     Endereço que não está relacionado a nenhum pedido - Right<br>
 select * from pedido<br>
 right outer join endereco on<br>
