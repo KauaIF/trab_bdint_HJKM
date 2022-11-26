@@ -28,10 +28,11 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
 > A pizzaria Pasta dall'Italia precisa inicialmente dos seguintes relatórios:
-* Relatório que mostre todas as combinações possíveis de pizza, apresentando a massa, a borda e o sabor.
-* Relatório que mostre a quantidade de pedidos recebidos.
-* Relatório que pegue os pedidos e mostre, o nome do cliente, seu telefone, o tipo de pagamento,  o endereço (cidade, bairro, tipo e nome do logradouro, e número da residência) e a pizza (massa, borda e sabor).
-* Relatório que apresente os clientes (código e nome) e quantos pedidos eles já fizeram.
+* Relatório referente a quantidade de pedidos por mês do ano. (Noção de temporada alta e temporada baixa)
+* Relatório referente a quantidade de pedidos por pessoa. (Melhores clientes)
+* Relatório referente a uso dos métodos de pagamento.
+* Relatório referente aos sabores pedidos.
+* Relatório de rentabilidade por bairro
 >> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
 * Relatório que mostre todas as formas de pagamento e mostrando qual é quantas vezes foi usada, mostrando da mais utilizada, pra menos utilizada. 
 
