@@ -366,7 +366,48 @@ insert into PEDIDO (fk_cliente_cpf, fk_forma_de_pagamento_cod, fk_endereco_cod, 
 (62554061483, 1, 6, '2022-01-30 22:55:00'),<br>
 (34161675461, 2, 7, '2022-11-05 16:07:00'),<br>
 (32487081317, 1, 8, '2022-10-09 12:42:00'),<br>
-(48708345376, 1, 1, '2022-03-09 12:43:00');<br>
+(48708345376, 1, 1, '2022-03-09 12:43:00'),<br>
+(60710341083, 2, 6, '2022-04-19 17:18:00'),<br>
+(14360748000, 3, 10, '2021-04-19 15:18:00'),<br>
+(14360748000, 2, 10, '2022-04-19 17:18:00'),<br>
+(34386934618, 3, 4, '2021-04-19 12:18:00'),<br>
+(43817225156, 3, 5, '2021-04-19 12:18:00'),<br>
+(71011848201, 2, 10, '2021-04-19 14:18:00'),<br>
+(43878133006, 3, 6, '2021-04-19 14:18:00'),<br>
+(32487081317, 3, 5, '2022-04-19 12:18:00'),<br>
+(59032741020, 2, 4, '2022-04-19 21:18:00'),<br>
+(24208256087, 1, 4, '2022-04-19 19:18:00'),<br>
+(34161675461, 2, 10, '2021-04-19 19:18:00'),<br>
+(14360748000, 1, 5, '2021-04-19 15:18:00'),<br>
+(43878133006, 3, 2, '2022-04-19 20:18:00'),<br>
+(76729680091, 1, 12, '2022-04-19 15:18:00'),<br>
+(58349103000, 3, 8, '2021-04-19 18:18:00'),<br>
+(20684737043, 1, 3, '2021-04-19 22:18:00'),<br>
+(20684737043, 2, 14, '2021-04-19 15:18:00'),<br>
+(14360748000, 2, 2, '2022-04-19 17:18:00'),<br>
+(59032741020, 2, 9, '2022-04-19 14:18:00'),<br>
+(68291051020, 2, 11, '2022-04-19 15:18:00'),<br>
+(85863630060, 1, 9, '2022-04-19 22:18:00'),<br>
+(43878133006, 3, 9, '2022-04-19 17:18:00'),<br>
+(24208256087, 2, 11, '2021-04-19 17:18:00'),<br>
+(43817225156, 1, 1, '2021-04-19 17:18:00'),<br>
+(34161675461, 3, 9, '2022-04-19 15:18:00'),<br>
+(60710341083, 3, 8, '2022-04-19 18:18:00'),<br>
+(34870064057, 3, 12, '2021-04-19 13:18:00'),<br>
+(20684737043, 3, 2, '2021-04-19 19:18:00'),<br>
+(48708345376, 3, 5, '2021-04-19 12:18:00'),<br>
+(59032741020, 3, 7, '2022-04-19 15:18:00'),<br>
+(42649378093, 2, 2, '2021-04-19 19:18:00'),<br>
+(34870064057, 3, 7, '2021-04-19 17:18:00'),<br>
+(60710341083, 3, 1, '2022-04-19 14:18:00'),<br>
+(71011848201, 3, 15, '2021-04-19 20:18:00'),<br>
+(71011848201, 1, 1, '2021-04-19 15:18:00'),<br>
+(68291051020, 2, 3, '2022-04-19 13:18:00'),<br>
+(34870064057, 2, 12, '2021-04-19 17:18:00'),<br>
+(85863630060, 3, 4, '2021-04-19 18:18:00'),<br>
+(68291051020, 3, 2, '2022-04-19 15:18:00'),<br>
+(14360748000, 2, 9, '2021-04-19 21:18:00'),<br>
+(34870064057, 3, 10, '2022-04-19 22:18:00');<br>
 
 insert into PIZZA_PEDIDO (fk_pedido_cod, fk_pizza_cod, qtd) values<br>
 (1, 1, 3),<br>
@@ -490,10 +531,55 @@ group by pedido.codigo; <br>
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
+SELECT * FROM cliente WHERE nome LIKE 'Matheus%';<br>
+
+SELECT * FROM bairro WHERE nome LIKE 'Canal%';<br>
+
+SELECT * FROM bairro WHERE not nome IlIKE '%a%';<br>
+
+SELECT * FROM sabor WHERE not tipo IlIKE '%a%';<br>
+
+SELECT * FROM cidade WHERE nome lIKE '%asco';<br>
+
+SELECT * FROM endereco WHERE nome_logradouro LIKE 'K%';<br>
+
+SELECT * FROM cidade WHERE nome IlIKE '%b%';<br>
+
+SELECT * FROM cliente WHERE nome IlIKE '%b%';<br>
+
+SELECT cast(extract(month from date(data))as int) as mês, count(*) qtd_pedidos FROM pedido
+group by mês
+order by qtd_pedidos desc;<br>
+
+SELECT cast(extract(year from date(data))as int) as ano, count(*) qtd_pedidos FROM pedido
+group by ano
+order by qtd_pedidos desc;<br>
+
+SELECT cast(extract(day from date(data))as int) as day, count(*) qtd_pedidos FROM pedido
+group by day
+order by qtd_pedidos desc;<br>
+
+SELECT cast(data as date), count(*) qtd_pedidos FROM pedido
+group by data;<br>
+
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
     b) Criar minimo 3 de atualização
+insert into TIPO_LOGRADOURO (nome) values ('verão');<br>
+update TIPO_LOGRADOURO set nome = 'primavera' where nome = 'verão';<br>
+
+insert into CLIENTE (cpf, telefone, nome) values ('111111111' ,22222222, 'Kaua mendes');<br>
+update cliente set nome = 'Cauã Mendes' where nome = 'Kaua mendes';<br>
+
+insert into CLIENTE (cpf, telefone, nome) values ('456456' ,789789, 'ricardo');<br>
+update cliente set telefone = 27984 where nome = 'ricardo';<br>
+
+delete from TIPO_LOGRADOURO where nome = 'primavera';<br>
+
+delete from cliente where nome = 'Cauã Mendes';<br>
+
+delete from cliente where telefone = '27984';<br>
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
